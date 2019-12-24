@@ -1,0 +1,63 @@
+@media only screen and (min-device-width: 500px) {
+  .container {
+    box-sizing: content-box;
+    margin: auto;
+    width: 500px;
+  }
+
+  .head {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .quickLogin {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .member_border {
+    display: relative;
+    border: 1px solid #e3e3e3;
+    padding: 32px;
+  }
+
+  p.or {
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 16px;
+  }
+
+  .o {
+    font-size: 18px;
+    background: white;
+    position: relative;
+    padding: 0 10px;
+  }
+
+  .memory_box {
+    display: flex;
+  }
+
+  .checkId {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .checkPw {
+    font-size: 14px;
+  }
+
+  .setLogin {
+    width: 16px;
+  }
+
+  .no_mem {
+    font-size: 15px;
+    text-align: center;
+    color: #656565;
+  }
+
+  .signUp {
+    margin-left: 30px;
+  }
+}

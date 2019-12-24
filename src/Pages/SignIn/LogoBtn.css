@@ -1,0 +1,17 @@
+@media only screen and (min-device-width: 500px) {
+  .login_btn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social_login {
+    border: none;
+    background: none;
+    margin-bottom: 10px;
+  }
+
+  .login-icon {
+    width: 58%;
+    height: auto;
+  }
+}
