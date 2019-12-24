@@ -1,0 +1,180 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 830px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.daily {
+    display: flex;
+    flex-direction: row;
+    padding-top: 88px;
+    padding-bottom: 87px;
+    justify-content: space-between;
+}
+
+.dailyLeft {
+    padding-bottom: 0px;
+    letter-spacing: 0px;
+}
+
+.dailyText {
+    width: 300px;
+    margin-bottom: 18px;
+    font-size: 31.2px;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(46, 48, 53);
+    letter-spacing: -0.018px;
+    line-height: 1.5;
+}
+
+.dailyBtn {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.dailyBtnComment {
+    font-size: 15px;
+    margin-right: 1px;
+    font-weight: bold;
+    color: rgb(5, 92, 245);
+}
+
+
+.dailyDogPhoto {
+    object-fit: cover;
+    height: 400px;
+    width: 375px;
+    position: inherit;
+    left: 0px;
+}
+
+.dailyRight {
+    position: relative;
+}
+
+@media screen and (max-width : 768px) {
+    .mainContainer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .daily {
+        padding-top: 64px;
+        padding-bottom: 65px;
+        justify-content: unset;
+        flex-direction: column;
+    }
+
+    .dailyLeft {
+        padding-bottom: 24px;
+        letter-spacing: -0.18px;
+    }
+
+    .dailyText {
+
+        margin-bottom: 17px;
+        font-size: 25px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+    }
+
+    .dailyDogPhoto {
+        height: inherit;
+        width: calc(100% + 48px);
+        position: absolute;
+        left: -24px;
+    }
+
+}
+
+.lifeTitle {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 64px;
+}
+
+
+
+/*
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 830px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.daily {
+    display: flex;
+    flex-direction: row;
+    padding-top: 88px;
+    padding-bottom: 87px;
+    justify-content: space-between;
+}
+
+.dailyText {
+    width: 300px;
+    margin-bottom: 18px;
+    font-size: 31.2px;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(46, 48, 53);
+    letter-spacing: -0.018px;
+    line-height: 1.5;
+}
+
+.dailyBtn {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.dailyBtnComment {
+    font-size: 15px;
+    margin-right: 1px;
+    font-weight: bold;
+    color: rgb(5, 92, 245);
+}
+
+
+.ddailyDogPhoto {
+    object-fit: cover;
+    height: 400px;
+    width: 375px;
+    position: inherit;
+    left: 0px;
+}
+
+.dailyRight {
+    position: relative;
+}
+
+@media screen and (min-width : 768px) {
+    .mainContainer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .daily {
+        padding-top: 64px;
+        padding-bottom: 65px;
+        justify-content: unset;
+    }
+}
+*/
