@@ -1,12 +1,12 @@
 import React from 'react'
 import FooterComp from './FooterComp'
-import './Footer.css'
+import './Footer.scss'
 
 
 function Footer() {
     
     return (
-        <div className = "Footer">
+        <footer>
             <div className= "backgroundColor">
                 <div className =" layout">
                     <div className ="margin">
@@ -28,7 +28,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 
