@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wiso_logo_white {
+  background: gray;
+  cursor: pointer;
+}
+
+nav {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu_list_item {
+  line-height: 80px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
