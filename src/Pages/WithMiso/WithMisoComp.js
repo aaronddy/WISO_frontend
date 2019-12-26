@@ -2,7 +2,7 @@ import React from 'react'
 
 function WithMisoComp(props) {
     return (
-        <div className  ="bottom5px">
+        <div className  ="slightBtm">
             {props.text}
         </div>
     )
