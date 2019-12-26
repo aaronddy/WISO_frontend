@@ -31,15 +31,18 @@ class MovingBookingPage extends Component {
     }
 
     handler = (e) => {
-       if(this.state.mode1 === false ){this.setState({
+        console.dir(e.target)
+            if(e.target.innerText=== "가정이사" ){this.setState({
                 mode1:true,
                 mode2:false,
-                mode3:false
-            })}  if(this.state.mode2 === false ){this.setState({
+                mode3:false,
+            })} 
+            else if(e.target.innerText=== "소형이사" ){this.setState({
                 mode1:false,
                 mode2:true,
                 mode3:false
-            })} if(this.state.mode3 === false ){this.setState({
+            })}
+            else if(e.target.innerText=== "사무실이사" ){this.setState({
                 mode1:false,
                 mode2:false,
                 mode3:true
@@ -54,6 +57,11 @@ class MovingBookingPage extends Component {
     }
 
     render() {
+
+     console.log(this.state.mode1)
+     console.log(this.state.mode2)
+     console.log(this.state.mode3)
+
     return (
         <div>
             <nav className ="navbar navbarDefault">
@@ -80,9 +88,9 @@ class MovingBookingPage extends Component {
                 <div className ="center">
                     <SelectOption clicked={this.handler}
                     change = {this.state.mode1? "moveButtonBlue center" : "moveButtonWraper center"} category ="house" service="가정이사"/>
-                    <SelectOption onClick={this.handler}
+                    <SelectOption clicked={this.handler}
                     change = {this.state.mode2? "moveButtonBlue center" : "moveButtonWraper center"} category ="house" service="소형이사"/>
-                    <SelectOption onClick={this.handler}
+                    <SelectOption clicked={this.handler}
                     change = {this.state.mode3? "moveButtonBlue center" : "moveButtonWraper center"} category ="office" service="사무실이사"/>
                 </div>
                 <div>
