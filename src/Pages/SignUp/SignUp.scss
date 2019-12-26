@@ -1,0 +1,16 @@
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+::selection {
+  background-color: orange;
+  color: white;
+}
+
+.SignUpHeading {
+  font-size: 34px;
+}
