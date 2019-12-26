@@ -15,12 +15,12 @@ class ServiceBox extends React.Component {
       <div className="lifeBox">
         <img
           className="boxImg"
-          src={this.state.subImg}
+          src={this.props.data.subImg}
           alt="미소 홈 서비스 이미지"
         />
         <div className="textWrap">
-          <div className="mainTitle">{this.state.mainTitle}</div>
-          <div className="subTitle">{this.state.subTitle}</div>
+          <div className="mainTitle">{this.props.data.mainTitle}</div>
+          <div className="subTitle">{this.props.data.subTitle}</div>
         </div>
       </div>
     );
