@@ -16,7 +16,7 @@ class SignIn extends Component {
           <h2 className="quickLogin">간편 로그인</h2>
           <LogoBtn />
           <p className="or">
-            <span className="o">또는</span>
+            <span className="or_span">또는</span>
           </p>
           <InputForm />
           <p className="no_mem">
