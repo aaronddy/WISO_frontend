@@ -22,7 +22,7 @@
 }
 
 .dailyText {
-    width: 300px;
+    width: 281px;
     margin-bottom: 18px;
     font-size: 31.2px;
     font-weight: bold;
@@ -30,22 +30,6 @@
     color: rgb(46, 48, 53);
     letter-spacing: -0.018px;
     line-height: 1.5;
-}
-
-.dailyBtn {
-    border: none;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
-}
-
-.dailyBtnComment {
-    font-size: 15px;
-    margin-right: 1px;
-    font-weight: bold;
-    color: rgb(5, 92, 245);
 }
 
 
@@ -59,6 +43,27 @@
 
 .dailyRight {
     position: relative;
+}
+
+.lifeHiddenWrap {
+    display: none;
+}
+
+.homeServiceWrapper {
+    padding: 64px 0px 24px 0px;
+}
+
+.lifeTitle {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 64px
+}
+
+.HomeImageWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media screen and (max-width : 768px) {
@@ -91,15 +96,115 @@
     .dailyDogPhoto {
         height: inherit;
         width: calc(100% + 48px);
-        position: absolute;
         left: -24px;
     }
 
+    .homeServiceWrapper {
+        padding: 55px 0px 24px 0px;
+    }
+
+    .lifeTitle {
+        display: flex;
+        font-size: 34px;
+        font-weight: bold;
+        margin-bottom: 32px;
+        display: block;
+    }
+
+    .lifeText {
+        display: none;
+    }
+
+    .lifeHiddenWrap {
+        display: block;
+        line-height: 46px;
+        font-size: 36px;
+    }
+
+    .lifeHidden {
+        display: block;
+    }
+
+    .HomeImageWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
-.lifeTitle {
+
+
+
+
+/*
+.mainContainer {
     display: flex;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 64px;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 830px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 0px;
 }
+
+.daily {
+    display: flex;
+    flex-direction: row;
+    padding-top: 88px;
+    padding-bottom: 87px;
+    justify-content: space-between;
+}
+
+.dailyText {
+    width: 300px;
+    margin-bottom: 18px;
+    font-size: 31.2px;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(46, 48, 53);
+    letter-spacing: -0.018px;
+    line-height: 1.5;
+}
+
+.dailyBtn {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.dailyBtnComment {
+    font-size: 15px;
+    margin-right: 1px;
+    font-weight: bold;
+    color: rgb(5, 92, 245);
+}
+
+
+.ddailyDogPhoto {
+    object-fit: cover;
+    height: 400px;
+    width: 375px;
+    position: inherit;
+    left: 0px;
+}
+
+.dailyRight {
+    position: relative;
+}
+
+@media screen and (min-width : 768px) {
+    .mainContainer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .daily {
+        padding-top: 64px;
+        padding-bottom: 65px;
+        justify-content: unset;
+    }
+}
+*/
