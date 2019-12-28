@@ -2,9 +2,11 @@ import React from "react";
 import "./Main.scss";
 import Line from "../../Components/Line/Line";
 import Daily from "../../Images/DailyImg.png";
+import MainSlide from "../../Components/MainSlide/MainSlide";
 function Main() {
   return (
     <div className="mainContainer">
+      <MainSlide />
       <div className="daily">
         <div className="dailyLeft">
           <div className="dailyText">
