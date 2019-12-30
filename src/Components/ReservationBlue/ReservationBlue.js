@@ -9,31 +9,29 @@ class ReservationBlue extends Component {
     };
   }
   componentDidMount() {
-    window.addEventListener("scroll", () => {
-      const isBottom = window.scrollY > 900;
-      if (isBottom !== true) {
-        this.setState({ scrolled: true });
-      } else {
-        this.setState({ scrolled: false });
-      }
-    });
+    window.addEventListener("scroll", this.handleScroll);
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll");
+    window.removeEventListener("scroll", this.handleScroll);
   }
+  handleScroll = () => {
+    const isBottom = window.scrollY > 900;
+    if (isBottom !== true) {
+      this.setState({ scrolled: true });
+    } else {
+      this.setState({ scrolled: false });
+    }
+  };
+
   render() {
     return (
-      <>
-        <button
-          className={
-            this.state.scrolled
-              ? "reservationBlue"
-              : " reservationBlue scrolled"
-          }
-        >
-          예약하기
-        </button>
-      </>
+      <button
+        className={
+          this.state.scrolled ? "reservationBlue" : " reservationBlue scrolled"
+        }
+      >
+        예약하기
+      </button>
     );
   }
 }
