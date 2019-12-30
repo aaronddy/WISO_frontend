@@ -16,11 +16,20 @@ class SignUp extends React.Component {
       Emailtext: "",
       PWtext: "",
       PWChecktext: "",
+      Phonetext: "",
       PW: "",
       name: "",
       email: "",
       pw: "",
-      pwConfirm: ""
+      pwConfirm: "",
+      Phone: "",
+      errorColorNamePart: "",
+      errorColorEmailPart: "",
+      errorColorPasswordPart: "",
+      errorColorPasswordConfirmPart: "",
+      errorColorPhonePart: "",
+      SignUpButton: "SignUpButtonBefore",
+      MissingPartList: []
     };
   }
 
@@ -96,20 +105,37 @@ class SignUp extends React.Component {
       e.target.value.length < 2
     ) {
       this.setState({
-        Nametext: "유효한 이름 형식이 아닙니다."
+        Nametext: "유효한 이름 형식이 아닙니다.",
+        errorColorNamePart: "errorColorChange"
+        // MissingPartList: [this.state.MissingPartList, null]
       });
     }
     if (
       e.target.className === "InfoBox InfoBoxName" &&
       e.target.value.length >= 2
     ) {
-      this.setState({ Nametext: "좋은 이름입니다.", name: e.target.value });
+      this.setState({
+        Nametext: "좋은 이름입니다.",
+        name: e.target.value,
+        errorColorNamePart: "",
+        // MissingPartList: this.state.MissingPartList.concat([this.state.name])
+        MissingPartList: [...this.state.MissingPartList, this.state.name]
+      });
     }
     if (e.target.className === "InfoBox InfoBoxMail" && this.isEmail(email)) {
-      this.setState({ Emailtext: "사용 가능합니다.", email: e.target.value });
+      this.setState({
+        Emailtext: "사용 가능합니다.",
+        email: e.target.value,
+        errorColorEmailPart: ""
+        // MissingPartList: [...this.state.MissingPartList, this.state.email]
+      });
     }
     if (e.target.className === "InfoBox InfoBoxMail" && !this.isEmail(email)) {
-      this.setState({ Emailtext: "이메일 형식이 아닙니다." });
+      this.setState({
+        Emailtext: "이메일 형식이 아닙니다.",
+        errorColorEmailPart: "errorColorChange"
+        // MissingPartList: [this.state.MissingPartList, null]
+      });
     }
     if (
       e.target.className === "InfoBox InfoBoxPW" &&
@@ -117,7 +143,9 @@ class SignUp extends React.Component {
     ) {
       this.setState({
         PWtext: "최소 9글자 이상 입력해 주세요.",
-        PW: e.target.value
+        PW: e.target.value,
+        errorColorPasswordPart: "errorColorChange"
+        // MissingPartList: [this.state.MissingPartList, null]
       });
     }
     if (
@@ -127,7 +155,9 @@ class SignUp extends React.Component {
       this.setState({
         PWtext: "사용 가능합니다.",
         PW: e.target.value,
-        pw: e.target.value
+        pw: e.target.value,
+        errorColorPasswordPart: ""
+        // MissingPartList: [this.state.MissingPartList, this.state.pw]
       });
     }
     if (
@@ -136,47 +166,98 @@ class SignUp extends React.Component {
     ) {
       this.setState({
         PWChecktext: "비밀번호가 일치합니다.",
-        pwComfirm: this.state.pwComfirm
+        pwConfirm: this.state.pw,
+        errorColorPasswordConfirmPart: ""
+        // MissingPartList: [this.state.MissingPartList, this.state.pwConfirm]
       });
     }
     if (
       e.target.className === "InfoBox InfoBoxPWCheck" &&
       e.target.value !== this.state.PW
     ) {
-      this.setState({ PWChecktext: "비밀번호가 일치하지 않습니다." });
+      this.setState({
+        PWChecktext: "비밀번호가 일치하지 않습니다.",
+        errorColorPasswordConfirmPart: "errorColorChange"
+        // MissingPartList: [this.state.MissingPartList, null]
+      });
+    }
+    if (
+      e.target.className === "InfoBox InfoBoxPhoneNumber" &&
+      e.target.value.length === 11
+    ) {
+      this.setState({
+        Phonetext: "확인되었습니다.",
+        Phone: e.target.value,
+        errorColorPhonePart: ""
+        // MissingPartList: [this.state.MissingPartList, this.state.phone]
+      });
+    }
+    if (
+      e.target.className === "InfoBox InfoBoxPhoneNumber" &&
+      e.target.value.length !== 11
+    ) {
+      this.setState({
+        Phonetext: "올바른 형식이 아닙니다.",
+        errorColorPhonePart: "errorColorChange"
+        // MissingPartList: [this.state.MissingPartList, null]
+      });
+    }
+  };
+  SignUpClick = () => {
+    this.SignUpExecute();
+    this.SignUpReady();
+  };
+
+  SignUpReady = () => {
+    {
+      {
+        this.state.name !== undefined &&
+        this.state.email !== undefined &&
+        this.state.pw !== undefined &&
+        this.state.pwConfirm !== undefined &&
+        this.state.box1 &&
+        this.state.box2
+          ? this.setState({ SignUpButton: "SignUpButtonAfter" })
+          : this.setState({ SignUpButton: "SignUpButtonBefore" });
+      }
     }
   };
 
   SignUpExecute = () => {
-    if (
-      this.state.name &&
-      this.state.email &&
-      this.state.pw &&
-      this.state.pwConfirm !== undefined &&
-      this.state.box1 &&
-      this.state.box2
-    ) {
-      fetch("10.58.7.197:8000/user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email,
-          password: this.state.pw
-        })
-      })
-        .then(res => res.json())
-        .then(res => {
-          alert("success");
-        });
-    }
+    // if (
+    //   this.state.name !== undefined &&
+    //   this.state.email !== undefined &&
+    //   this.state.pw !== undefined &&
+    //   this.state.pwConfirm !== undefined &&
+    //   this.state.box1 &&
+    //   this.state.box2
+    // ) {
+    //   fetch("10.58.7.197:8000/user", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({
+    //       name: this.state.name,
+    //       email: this.state.email,
+    //       password: this.state.pw
+    //     })
+    //   })
+    //     .then(res => res.json())
+    //     .then(res => {
+    //       alert("success");
+    //     });
+    // }
   };
+
   render() {
-    console.log(this.state.box1);
     console.log(this.state.name);
     console.log(this.state.email);
     console.log(this.state.pw);
     console.log(this.state.pwConfirm);
+    console.log(this.state.Phone);
+    console.log(this.state.SignUpButton);
+    console.log(this.state.box1);
+    console.log(this.state.box2);
+    console.log(this.state.MissingPartList);
     return (
       <div className="SignUpBody">
         <nav></nav>
@@ -201,8 +282,9 @@ class SignUp extends React.Component {
                   InfoBox={"InfoBox InfoBoxName"}
                   errorMessage={this.errorMessage}
                   idx={this.eIndex}
+                  errorBorder={this.state.errorColorNamePart}
                 />
-                <span>{this.state.Nametext}</span>
+                <span id={this.errorBorder}>{this.state.Nametext}</span>
                 <SignUpInfoBox
                   for="email"
                   type="text"
@@ -210,8 +292,9 @@ class SignUp extends React.Component {
                   indicator="이메일"
                   InfoBox={"InfoBox InfoBoxMail"}
                   errorMessage={this.errorMessage}
+                  errorBorder={this.state.errorColorEmailPart}
                 />
-                <span>{this.state.Emailtext}</span>
+                <span id={this.errorBorder}>{this.state.Emailtext}</span>
                 <SignUpInfoBox
                   for="password"
                   type="password"
@@ -219,8 +302,9 @@ class SignUp extends React.Component {
                   indicator="비밀번호"
                   InfoBox={"InfoBox InfoBoxPW"}
                   errorMessage={this.errorMessage}
+                  errorBorder={this.state.errorColorPasswordPart}
                 />
-                <span>{this.state.PWtext}</span>
+                <span id={this.errorBorder}>{this.state.PWtext}</span>
                 <SignUpInfoBox
                   for="passwordConfirm"
                   type="password"
@@ -228,8 +312,19 @@ class SignUp extends React.Component {
                   indicator="비밀번호 확인"
                   InfoBox={"InfoBox InfoBoxPWCheck"}
                   errorMessage={this.errorMessage}
+                  errorBorder={this.state.errorColorPasswordConfirmPart}
                 />
-                <span>{this.state.PWChecktext}</span>
+                <span id={this.errorBorder}>{this.state.PWChecktext}</span>
+                <SignUpInfoBox
+                  for="phoneNunber"
+                  type="number"
+                  label="휴대폰 번호"
+                  indicator="휴대폰 번호"
+                  InfoBox={"InfoBox InfoBoxPhoneNumber"}
+                  errorMessage={this.errorMessage}
+                  errorBorder={this.state.errorColorPhonePart}
+                />
+                <span id={this.errorBorder}>{this.state.Phonetext}</span>
               </ul>
               <div className="agreeBox">
                 <p className="allSelector">
@@ -280,7 +375,10 @@ class SignUp extends React.Component {
                 </ul>
               </div>
               <div>
-                <button onClick={this.SignUpExecute} className="SignUpButton">
+                <button
+                  onClick={this.SignUpClick}
+                  className={this.state.SignUpButton}
+                >
                   회원가입
                 </button>
               </div>

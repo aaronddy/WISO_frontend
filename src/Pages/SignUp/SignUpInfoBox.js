@@ -11,6 +11,7 @@ export class SignUpInfoBox extends Component {
             className={this.props.InfoBox}
             type={this.props.type}
             placeholder={this.props.indicator}
+            id={this.props.errorBorder}
           />
         </li>
       </>
