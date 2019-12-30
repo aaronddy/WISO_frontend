@@ -156,13 +156,13 @@ class SignUp extends React.Component {
       this.state.box1 &&
       this.state.box2
     ) {
-      fetch("http://10.58.9.10:8000/user", {
+      fetch("10.58.7.197:8000/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: this.state.name,
           email: this.state.email,
-          password: this.state.data.pw
+          password: this.state.pw
         })
       })
         .then(res => res.json())
