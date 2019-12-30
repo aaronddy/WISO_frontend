@@ -6,6 +6,7 @@ class Input_form extends Component {
     return (
       <form className="login_form">
         <div>
+          <label htmlFor="loginEmail"></label>
           <input className="typeBox" type="text" placeholder="이메일" />
         </div>
         <div>

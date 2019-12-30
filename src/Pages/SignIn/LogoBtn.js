@@ -15,7 +15,7 @@ class LogoBtn extends Component {
         >
           <img
             className="login-icon"
-            src="/images/naver_logo.PNG"
+            src="/images/naver_logo.png"
             alt="naver_logo"
           />
         </button>
@@ -29,8 +29,8 @@ class LogoBtn extends Component {
         >
           <img
             className="login-icon"
-            src="/images/kakao_logo copy.png"
-            alt="kakao_logo"
+            src="/images/kakao_logo_copy.png"
+            alt="카카오 로그인"
           />
         </button>
       </div>

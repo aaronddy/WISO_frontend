@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.scss";
 import Line from "../../Components/Line/Line";
-import Daily from "../../Images/DailyImg.png";
+// import Daily from "../../Images/DailyImg.png";
 import Detail from "../../Components/Detail/Detail";
 import ServiceBox from "../../Components/ServiceBox/ServiceBox";
 import ServiceData from "../../Components/ServiceBox/ServiceData";
@@ -14,12 +14,12 @@ function Main() {
             일상에 필요한 모든것을 쉽고 간편하게 하여 당신의 일상을 더 좋게
             만들어 나갑니다.
           </div>
-          <Detail />
+          <Detail link={"/SignIn"} />
         </div>
         <div className="dailyRight">
           <img
             className="dailyDogPhoto"
-            src={Daily}
+            src="/images/daily.png"
             alt="강아지와 있는 이미지"
           />
         </div>
