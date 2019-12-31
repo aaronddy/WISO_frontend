@@ -13,10 +13,10 @@
     right: 0;
     width: 100%;
     margin-top: 80px;
-    z-index: 200;
+    z-index: 100;
     transform: translateY(-120%);
     transition: transform 800ms ease-in-out;
-    background: #d4afaf;
+    background: white;
   }
 
   .sidebarMenu_open {
@@ -31,7 +31,7 @@
 
   .sidebarMenuInner li {
     list-style: none;
-    padding: 18px;
+    padding: 15px;
   }
   .sidebarMenu_item_big {
     font-size: 25px;
@@ -42,12 +42,12 @@
     font-size: 15px;
   }
   .makeLine {
-    border: 0.3px solid #f7f5f5;
+    border: 0.3px solid #ededed;
     width: 90%;
     margin: 20px auto 15px auto;
   }
   .sidebarMenuInner li a {
-    color: #fff;
+    color: black;
     cursor: pointer;
     text-decoration: none;
     margin-left: 10px;

@@ -5,10 +5,11 @@ import Daily from "../../Images/DailyImg.png";
 import Detail from "../../Components/Detail/Detail";
 import ServiceBox from "../../Components/ServiceBox/ServiceBox";
 import ServiceData from "../../Components/ServiceBox/ServiceData";
-
+import Nav from "../../Components/Nav/Nav";
 function Main() {
   return (
     <>
+      <Nav />
       <div className="mainContainer">
         <div className="daily">
           <div className="dailyLeft">
