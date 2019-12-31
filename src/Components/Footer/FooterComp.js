@@ -11,4 +11,3 @@ function FooterComp(props) {
 }
 
 export default FooterComp;
-
