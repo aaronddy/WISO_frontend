@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./LogoBtn.css";
+import kakaoLogo from "../../Images/logoImages/kakao_logo copy.png";
 
 class LogoBtn extends Component {
   render() {
@@ -8,16 +9,12 @@ class LogoBtn extends Component {
         <button
           className="socialLogin"
           onClick={ev => {
-            this.socialLogin("#네이버");
+            this.socialLogin("카카오");
           }}
         >
-          <img
-            className="loginIconNaver"
-            src="/images/naver_login_official.png"
-            alt="naver_logo"
-          />
+          <img className="loginIconKakao" src={kakaoLogo} alt="kakao_logo" />
         </button>
-        <button
+        {/* <button
           className="socialLogin"
           onClick={ev => {
             this.socialLogin("#구글");
@@ -28,7 +25,7 @@ class LogoBtn extends Component {
             src="/images/btn_google_signin.png"
             alt="구글 로그인"
           />
-        </button>
+        </button> */}
       </div>
     );
   }

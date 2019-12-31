@@ -112,13 +112,14 @@ class SignIn extends Component {
 
     return (
       <div className="containerLogin">
-        {/* <h1 className="head">로그인</h1> */}
+        <h1 className="head">로그인</h1>
         <div className="memberBorder">
           <h2 className="quickLogin">간편 로그인</h2>
           <LogoBtn />
           <p className="or">
             <span className="orSpan">또는</span>
           </p>
+
           <form className="loginForm" onSubmit={this.postSignIn}>
             <div className="loginEmail_div">
               <label htmlFor="loginEmail"></label>
@@ -162,7 +163,7 @@ class SignIn extends Component {
           </form>
           <p className="noMember">
             아직 미소 회원이 아니신가요?
-            <a className="signUp" href="/SignUp">
+            <a className="signUpForMem" href="/SignUp">
               회원가입
             </a>
           </p>
