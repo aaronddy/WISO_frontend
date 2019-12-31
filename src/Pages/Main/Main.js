@@ -2,12 +2,12 @@ import React from "react";
 import "./Main.scss";
 import Line from "../../Components/Line/Line";
 import Daily from "../../Images/DailyImg.png";
+import MainSlide from "../../Components/MainSlide/MainSlide";
 import Detail from "../../Components/Detail/Detail";
 import ServiceBox from "../../Components/ServiceBox/ServiceBox";
 import ServiceData from "../../Components/ServiceBox/ServiceData";
 import Footer from "../../Components/Footer/Footer";
 import WithMiso from "../../Pages/WithMiso/WithMiso";
-import MainSlide from "../../Components/MainSlide/MainSlide";
 
 function Main() {
   return (
