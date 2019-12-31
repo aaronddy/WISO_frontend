@@ -15,7 +15,7 @@ function Main() {
             일상에 필요한 모든것을 쉽고 간편하게 하여 당신의 일상을 더 좋게
             만들어 나갑니다.
           </div>
-          <Detail link={"/SignIn"} />
+          <Detail link={"/Main"} />
         </div>
         <div className="dailyRight">
           <img
