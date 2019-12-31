@@ -1,5 +1,6 @@
 import React from "react";
 import "./Main.scss";
+import Daily from "../../Images/images/DailyImg.png";
 import Line from "../../Components/Line/Line";
 import MainSlide from "../../Components/MainSlide/MainSlide";
 import Detail from "../../Components/Detail/Detail";
