@@ -1,0 +1,157 @@
+.SignUpBody {
+  background: #f6f6f6;
+  font-family: NanumBarunGothic, 나눔바른고딕, NanumGothic, 돋움, Dotum,
+    Helvetica, Apple SD Gothic Neo, Sans-serif !important;
+  font-size: 12px;
+  line-height: 18px;
+  overflow-x: hidden;
+  min-width: 300px;
+  -webkit-font-smoothing: antialiased;
+
+  //Screen size less than 768px
+
+  .SignUpHeading {
+    padding-top: 120px;
+    padding-bottom: 20px;
+    font-size: 34px;
+    font-family: NanumBarunGothicBold, sans-serif;
+    text-align: center;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #000;
+  }
+  .memberWrap {
+    background: none;
+    width: 768px;
+    margin: 0 auto;
+    padding: 30px 50px 100px;
+    position: relative;
+  }
+
+  section.memberWrap .memberInner {
+    width: 648px;
+    padding: 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .SignUpHeading {
+      padding-top: 70px;
+      padding-bottom: 0;
+      font-size: 20px;
+      font-family: NanumBarunGothicBold, sans-serif;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      color: #000;
+    }
+    .memberWrap {
+      background: #fff;
+      width: 100%;
+      padding: 20px 15px 50px;
+      margin: 0 auto;
+      position: relative;
+    }
+    section.memberWrap .memberInner {
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+      background: #fff;
+    }
+  }
+
+  //위에 꺼 768px일 때, 바뀌어야 함.
+  @media only screen and (min-device-width: 500px) {
+    .container {
+      box-sizing: content-box;
+      margin: auto;
+      width: 100%;
+    }
+    .setLogin {
+      width: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  section.memberWrap .orBar:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ebebeb;
+  }
+
+  section.memberWrap .orBar span {
+    display: inline-block;
+    position: relative;
+    padding: 0 15px;
+    color: #000;
+    font-size: 14px;
+    background: #fff;
+  }
+
+  section.memberWrap .orBar {
+    position: relative;
+    width: 100%;
+    margin: 25px 0 25px 0;
+    text-align: center;
+  }
+
+  .loginBtn .socialLogin {
+    display: block;
+    position: relative;
+    height: 48px;
+    border: 1px solid #ccc;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    line-height: 48px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 56px;
+    width: 100%;
+  }
+
+  section.memberWrap fieldset legend {
+    position: absolute;
+    font-size: 0;
+    text-indent: -9999px;
+  }
+
+  .logInInfo {
+    width: 100%;
+
+    li label {
+      display: none;
+    }
+
+    li {
+      position: relative;
+      margin-top: 16px;
+      font-size: 12px;
+    }
+
+    li:first-child {
+      margin-top: 0;
+    }
+
+    .InfoBox {
+      height: 51px;
+    }
+  }
+
+  .InfoBox {
+    width: 100%;
+    padding: 0 16px;
+    line-height: 1.2;
+    font-size: 16px;
+    border-radius: 0;
+    color: #000;
+    font-family: NanumBarunGothic;
+  }
+}
