@@ -224,28 +224,29 @@ class SignUp extends React.Component {
   };
 
   SignUpExecute = () => {
-    // if (
-    //   this.state.name !== undefined &&
-    //   this.state.email !== undefined &&
-    //   this.state.pw !== undefined &&
-    //   this.state.pwConfirm !== undefined &&
-    //   this.state.box1 &&
-    //   this.state.box2
-    // ) {
-    //   fetch("10.58.7.197:8000/user", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({
-    //       name: this.state.name,
-    //       email: this.state.email,
-    //       password: this.state.pw
-    //     })
-    //   })
-    //     .then(res => res.json())
-    //     .then(res => {
-    //       alert("success");
-    //     });
-    // }
+    if (
+      this.state.name !== undefined &&
+      this.state.email !== undefined &&
+      this.state.pw !== undefined &&
+      this.state.pwConfirm !== undefined &&
+      this.state.box1 &&
+      this.state.box2
+    ) {
+      fetch("http://10.58.7.197:8000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.pw,
+          phone_number: this.state.Phone
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("success");
+        });
+    }
   };
 
   render() {

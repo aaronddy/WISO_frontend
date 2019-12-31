@@ -142,7 +142,7 @@ class MovingBookingPage extends Component {
         <div className="container">
           <MovingBookingComp
             atr="sectionSubheading center"
-            heading="이름과 연락처를 알려주세요"
+            heading="서비스 이용 주소 및 번호를 입력해주세요"
           />
           <div className="bookingInfo center column container formTitle">
             <input
@@ -151,9 +151,9 @@ class MovingBookingPage extends Component {
                   name: e.target.value
                 });
               }}
-              type="text"
+              type="number"
               class="formControl inputName"
-              placeholder="이름"
+              placeholder="번호"
             ></input>
             <input
               onChange={e => {
@@ -161,9 +161,9 @@ class MovingBookingPage extends Component {
                   phone: e.target.value
                 });
               }}
-              type="number"
+              type="text"
               class="formControl inputPhone"
-              placeholder="연락처"
+              placeholder="검색"
             ></input>
           </div>
           <div className="center">
