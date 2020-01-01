@@ -1,198 +1,212 @@
-.navbar {
-  height: 64px;
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-}
+.MovingBookingPageTotal {
+  .navbar {
+    height: 64px;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+  }
 
-.navbarDefault {
-  border-color: #e7e7e7;
-}
+  .navbarDefault {
+    border-color: #e7e7e7;
+  }
 
-.pd {
-  padding-left: 0;
-  padding-right: 0;
-}
+  .pd {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media screen and (min-width: 768px) {
   .container {
-    width: 750px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
-}
 
-@media screen and (min-width: 992px) {
-  .container {
-    width: 970px;
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
   }
-}
 
-.appContainer {
-  margin-top: 110px;
-}
+  @media screen and (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
 
-h2.sectionHeading {
-  line-height: 1.3;
-  font-size: 34px;
-  font-weight: 100;
-  margin-top: 0;
-}
+  .appContainer {
+    margin-top: 110px;
+  }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
+  h2.sectionHeading {
+    line-height: 1.3;
+    font-size: 34px;
+    font-weight: 100;
+    margin-top: 0;
+  }
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
+  .center {
+    display: flex;
+    justify-content: center;
+  }
 
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eee;
-}
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
 
-h2.sectionSubheading {
-  line-height: 1.5;
-  text-transform: none;
-  margin-top: 30px;
-  font-size: 24px;
-  font-weight: 100;
-}
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
 
-.formTitle {
-  margin-bottom: 1.5rem;
-  margin-bottom: 60px;
-}
+  h2.sectionSubheading {
+    line-height: 1.5;
+    text-transform: none;
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 100;
+  }
 
-.moveButtonWraper {
-  cursor: pointer;
-  border-radius: 0.8rem;
-  border: 1px solid #b3b3b3;
-  color: #b3b3b3;
-  font-weight: 500;
-  padding: 15px;
-  word-break: break-word;
-  font-size: 1.2rem;
-  outline: none;
-  width: 100%;
-  // &:focus{
-  // border:2px solid #055cf5;
-  // color: #055cf5;
-  // }
-}
+  .formTitle {
+    margin-bottom: 1.5rem;
+    margin-bottom: 10px;
+  }
 
-.moveButtonBlue {
-  cursor: pointer;
-  border-radius: 0.8rem;
-  border: 2px solid #055cf5;
-  color: #055cf5;
-  font-weight: 500;
-  padding: 1.3rem 2rem;
-  word-break: break-word;
-  font-size: 1.2rem;
-  outline: none;
-  width: 100%;
-}
+  .moveButtonWraper {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 1px solid #b3b3b3;
+    color: #b3b3b3;
+    font-weight: 500;
+    padding: 15px;
+    word-break: break-word;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+    // &:focus{
+    // border:2px solid #055cf5;
+    // color: #055cf5;
+    // }
+  }
 
-.service {
-  margin: 0 3px 0 3px;
-  width: 100%;
-}
+  .moveButtonBlue {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 2px solid #055cf5;
+    color: #055cf5;
+    font-weight: 500;
+    padding: 1.3rem 2rem;
+    word-break: break-word;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+  }
 
-h2.sectionPreheading {
-  cursor: pointer;
-  color: #055cf5;
-  font-weight: 600;
-  text-transform: none;
-  font-size: 18px;
-}
+  .service {
+    margin: 0 3px 0 3px;
+    width: 100%;
+  }
 
-.outerFree {
-  color: #337ab7;
-  text-decoration: none;
-}
+  h2.sectionPreheading {
+    cursor: pointer;
+    color: #055cf5;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 18px;
+  }
 
-input.formControl {
-  display: block;
-  font-size: 22px;
-  padding: 10px;
-  line-height: 1.42857143;
-  color: #222;
-  background-color: #f2f2f2;
-  background-image: none;
-  border: none;
-  border-radius: 0.8rem;
-  box-shadow: none;
-  outline: 0;
-}
+  .outerFree {
+    color: #337ab7;
+    text-decoration: none;
+  }
 
-.inputName {
-  margin-bottom: 10px;
-}
+  input.formControl {
+    display: block;
+    font-size: 22px;
+    padding: 10px;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: #f2f2f2;
+    background-image: none;
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: none;
+    outline: 0;
+  }
 
-.bookingInfo {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+  .inputName {
+    margin-bottom: 10px;
+  }
 
-@media screen and (min-width: 768px) {
   .bookingInfo {
-    width: 500px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
-}
 
-@media screen and (min-width: 992px) {
-  .bookingInfo {
-    width: 500px;
+  @media screen and (min-width: 768px) {
+    .bookingInfo {
+      width: 500px;
+    }
   }
-}
 
-.btnBefore {
-  background-color: #055cf5;
-  color: #fff;
-  border-color: #055cf5;
-  opacity: 0.4;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 17px 34px;
-  border-radius: 30px;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  margin-top: 3px;
-  font-weight: 550;
-  cursor: not-allowed;
-}
+  @media screen and (min-width: 992px) {
+    .bookingInfo {
+      width: 500px;
+    }
+  }
 
-.btnAfter {
-  background-color: #055cf5;
-  color: #fff;
-  border-color: #055cf5;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 17px 34px;
-  border-radius: 30px;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  margin-top: 3px;
-  font-weight: 550;
-  cursor: pointer;
-}
+  .btnBefore {
+    background-color: #055cf5;
+    color: #fff;
+    border-color: #055cf5;
+    opacity: 0.4;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 17px 34px;
+    border-radius: 30px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-top: 3px;
+    font-weight: 550;
+    cursor: not-allowed;
+  }
 
-//.move_button_wraper를 .move_house로 바꾸기
+  .btnAfter {
+    background-color: #055cf5;
+    color: #fff;
+    border-color: #055cf5;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 17px 34px;
+    border-radius: 30px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-top: 3px;
+    font-weight: 550;
+    cursor: pointer;
+  }
+
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #055cf5;
+    color: #fff;
+    border-color: #055cf5;
+    opacity: 0.4;
+    font-size: 12px;
+  }
+  //.move_button_wraper를 .move_house로 바꾸기
+}
