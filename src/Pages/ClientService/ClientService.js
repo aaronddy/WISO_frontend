@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ServiceClient.scss";
+import "./ClientService.scss";
 
 class ServiceClinet extends Component {
   render() {
