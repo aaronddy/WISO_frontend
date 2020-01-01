@@ -6,7 +6,6 @@ import DaumPostcode from "react-daum-postcode";
 
 // import PostCode from "../../Components/PostcodeSearch/PostCode";
 // import { fullAddress } from "../../Components/PostcodeSearch/PostCode";
-
 class MovingBookingPage extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +61,20 @@ class MovingBookingPage extends Component {
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      alert("가정이사 서비스를 문의해주셔서 감사합니다.");
+      fetch("http://10.58.7.197:8000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.pw,
+          phone_number: this.state.Phone
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("가정 이사 서비스를 문의 주셔서 감사합니다.");
+        });
     }
     if (
       this.state.mode2 === true &&

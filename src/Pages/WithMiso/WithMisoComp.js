@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function WithMisoComp(props) {
-    return (
-        <div className  ="slightBtm">
-            {props.text}
-        </div>
-    )
+  return <div className="slightBtm">{props.text}</div>;
 }
 
 export default WithMisoComp;

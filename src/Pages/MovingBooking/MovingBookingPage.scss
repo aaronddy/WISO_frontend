@@ -23,13 +23,13 @@
     margin-left: auto;
   }
 
-  @media screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .container {
       width: 750px;
     }
   }
 
-  @media screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
     .container {
       width: 970px;
     }
@@ -44,6 +44,7 @@
     font-size: 34px;
     font-weight: 100;
     margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .center {
@@ -66,7 +67,7 @@
   h2.sectionSubheading {
     line-height: 1.5;
     text-transform: none;
-    margin-top: 30px;
+    margin: 10px 0;
     font-size: 24px;
     font-weight: 100;
   }
@@ -117,6 +118,7 @@
     font-weight: 600;
     text-transform: none;
     font-size: 18px;
+    margin: 15px 0;
   }
 
   .outerFree {
