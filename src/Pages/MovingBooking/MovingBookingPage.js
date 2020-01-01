@@ -2,31 +2,30 @@ import React, { Component } from "react";
 import "./MovingBookingPage.scss";
 import MovingBookingComp from "./MovingBookingComp";
 import SelectOption from "./SelectOption";
-import Footer from "../../Components/Footer/Footer";
+import DaumPostcode from "react-daum-postcode";
 
+// import PostCode from "../../Components/PostcodeSearch/PostCode";
+// import { fullAddress } from "../../Components/PostcodeSearch/PostCode";
 class MovingBookingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      Address: "",
       phone: "",
       idp: false,
       mode1: false,
       mode2: false,
-      mode3: false
+      mode3: false,
+      address: "",
+      isActived: false
     };
   }
 
-  handle = e => {
-    if (e.target.value.length > 1) {
-      console.dir(e.target);
-      console.log(this.state.name);
-      console.log(this.state.phone);
-      this.setState({
-        name: console.log(e.target.value),
-        phone: console.log(e.target.value)
-      });
-    }
+  handleData = data => {
+    this.setState({
+      isActived: !this.state.isActived,
+      address: data.address
+    });
   };
 
   handler = e => {
@@ -37,13 +36,15 @@ class MovingBookingPage extends Component {
         mode2: false,
         mode3: false
       });
-    } else if (e.target.innerText === "소형이사") {
+    }
+    if (e.target.innerText === "소형이사") {
       this.setState({
         mode1: false,
         mode2: true,
         mode3: false
       });
-    } else if (e.target.innerText === "사무실이사") {
+    }
+    if (e.target.innerText === "사무실이사") {
       this.setState({
         mode1: false,
         mode2: false,
@@ -54,19 +55,73 @@ class MovingBookingPage extends Component {
 
   //idp1 만 클릭되었으면, idp1: false가 setState에서 true로 바뀐다.
 
-  alert = () => {
-    {
-      alert("문의가 완료 되었습니다.");
+  Bookingdone = () => {
+    if (
+      this.state.mode1 === true &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      fetch("http://10.58.7.197:8000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.pw,
+          phone_number: this.state.Phone
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("가정 이사 서비스를 문의 주셔서 감사합니다.");
+        });
     }
+    if (
+      this.state.mode2 === true &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      alert("소형이사 서비스를 문의해주셔서 감사합니다.");
+    }
+    if (
+      this.state.mode3 === true &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      alert("사무실 서비스를 문의해주셔서 감사합니다.");
+    }
+  };
+
+  SeAddress = () => {
+    // window.open(
+    //   "http://localhost:3000/PostCode",
+    //   "a",
+    //   "width=500, height=300, left=460, top=280"
+    // );
+    this.setState({
+      isActived: !this.state.isActived
+    });
+  };
+
+  FillAddress = () => {
+    this.setState({
+      Address: this.props.fullAddress
+    });
   };
 
   render() {
     console.log(this.state.mode1);
     console.log(this.state.mode2);
     console.log(this.state.mode3);
+    // console.log(this.state.Address);
+    // console.log(this.fullAddress);
+    // console.log(<PostCode />);
+    // console.log(this.props);
+    console.log(this.state.address);
+    console.log(this.state.phone);
 
     return (
-      <div class="MovingBookingPage">
+      <div className="MovingBookingPageTotal">
         <nav className="navbar navbarDefault">
           <div className="container pd">
             <div className="navbarHeader">
@@ -142,38 +197,47 @@ class MovingBookingPage extends Component {
         <div className="container">
           <MovingBookingComp
             atr="sectionSubheading center"
-            heading="서비스 이용 주소 및 번호를 입력해주세요"
+            heading="서비스 받으실 주소 및 번호를 검색해 주세요"
           />
-          <div className="bookingInfo center column container formTitle">
-            <input
-              onChange={e => {
-                this.setState({
-                  name: e.target.value
-                });
-              }}
-              type="number"
-              class="formControl inputName"
-              placeholder="번호"
-            ></input>
-            <input
-              onChange={e => {
-                this.setState({
-                  phone: e.target.value
-                });
-              }}
-              type="text"
-              class="formControl inputPhone"
-              placeholder="검색"
-            ></input>
+          <div>
+            <form className="bookingInfo center column container formTitle">
+              <input
+                value={this.state.address}
+                type="text"
+                class="formControl inputName"
+                placeholder="주소"
+              />
+              <div className="searchBtn">
+                <div onClick={this.SeAddress} className="center">
+                  검색하기
+                </div>
+              </div>
+              {this.state.isActived && (
+                <DaumPostcode onComplete={this.handleData} />
+              )}
+            </form>
+            <form className="bookingInfo center column container formTitle">
+              <input
+                onChange={e => {
+                  this.setState({
+                    phone: e.target.value
+                  });
+                }}
+                type="number"
+                class="formControl inputPhone"
+                placeholder="연락처"
+              ></input>
+            </form>
           </div>
           <div className="center">
             <button
-              onChange={this.handle.bind(this)}
               type="button"
               className={
-                this.state.name && this.state.phone ? "btnAfter" : "btnBefore"
+                this.state.address && this.state.phone.length === 11
+                  ? "btnAfter"
+                  : "btnBefore"
               }
-              onClick={this.alert}
+              onClick={this.Bookingdone}
             >
               견적 문의
             </button>
@@ -182,7 +246,7 @@ class MovingBookingPage extends Component {
         <div className="formGroup">
           <hr></hr>
         </div>
-        <Footer />
+        {/* Footer fixed scss will be fixed then I will import in here */}
       </div>
     );
   }
