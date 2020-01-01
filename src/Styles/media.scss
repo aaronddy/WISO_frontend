@@ -1,0 +1,27 @@
+$media-size: (
+  small: 600px,
+  medium: 800px,
+  large: 1100px
+);
+
+@mixin media($min) {
+  @media screen and (min-width: map-get($media-size, $min)) {
+    @content;
+  }
+}
+
+@mixin m-small {
+  @include media(small) {
+    @content;
+  }
+}
+@mixin m-medium {
+  @include media(medium) {
+    @content;
+  }
+}
+@mixin m-large {
+  @include media(large) {
+    @content;
+  }
+}
