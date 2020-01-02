@@ -1,109 +1,115 @@
-.spaceBtw {
-  display: flex;
-  justify-content: space-between;
-}
+.FooterStyle {
+  .spaceBtw {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.flexStart {
-  display: flex;
-  justify-content: flex-start;
-}
+  .flexStart {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-.flexEnd {
-  display: flex;
-  justify-content: flex-end;
-}
+  .flexEnd {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-.alignCenter {
-  display: flex;
-  align-items: center;
-}
+  .alignCenter {
+    display: flex;
+    align-items: center;
+  }
 
-.flexDirRow {
-  display: flex;
-  flex-direction: row;
-}
+  .flexDirRow {
+    display: flex;
+    flex-direction: row;
+  }
 
-.arrow {
-  position: absolute;
-  right: 0;
-}
+  .arrow {
+    position: absolute;
+    right: 0;
+  }
 
-.relative {
-  position: relative;
-}
+  .relative {
+    position: relative;
+  }
 
-.inline {
-  display: inline;
-}
+  .inline {
+    display: inline;
+  }
 
-.top {
-  border: none;
-  outline: none;
-  font-weight: 900;
-  font-size: 24px;
-}
+  .top {
+    border: none;
+    outline: none;
+    font-weight: 900;
+    font-size: 24px;
+  }
 
-.linkPack {
-  border: none;
-  outline: none;
-  font-size: 15px;
-  margin-left: 20px;
-  font-weight: 500;
-}
+  .linkPack {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-left: 20px;
+    font-weight: 500;
+  }
 
-.topArrow {
-  width: 24px;
-}
+  .topArrow {
+    width: 24px;
+  }
 
-.white {
-  color: white;
-}
+  .white {
+    color: white;
+  }
 
-.black {
-  background-color: black;
-}
+  .black {
+    background-color: black;
+  }
 
-.marginBm1 {
-  margin-bottom: 24px;
-}
+  .marginBm1 {
+    margin-bottom: 24px;
+  }
 
-.marginBm2 {
-  margin-bottom: 10px;
-}
+  .marginBm2 {
+    margin-bottom: 10px;
+  }
 
-.ref {
-  font-size: 13px;
-  color: rgb(163, 167, 174);
-}
+  .ref {
+    font-size: 13px;
+    color: rgb(163, 167, 174);
+  }
 
-.background {
-  background: none;
-}
+  .background {
+    background: none;
+  }
 
-.backgroundColor {
-  background-color: rgb(38, 39, 40);
-}
+  .backgroundColor {
+    background-color: rgb(38, 39, 40);
+  }
 
-.layout {
-  border: 1px solid black;
-  padding: 24px 24px 92px;
-  background-color: rgb(38, 39, 40);
-  margin-bottom: 0px;
-}
+  .layout {
+    border: 1px solid black;
+    padding: 24px 24px 92px;
+    background-color: rgb(38, 39, 40);
+    margin-bottom: 0px;
+  }
 
-footer {
-  width: 100%;
-}
+  footer {
+    width: 100%;
+  }
 
-.margin {
-  margin: 0 5% 0 5%;
-}
+  .margin {
+    margin: 0 5% 0 5%;
+  }
 
-.border {
-  border: none;
-  cursor: none;
-}
+  .border {
+    border: none;
+    cursor: none;
+  }
 
-.cursor {
-  cursor: pointer;
+  .cursor {
+    cursor: pointer;
+  }
+
+  .logoSize {
+    width: 50px;
+  }
 }
