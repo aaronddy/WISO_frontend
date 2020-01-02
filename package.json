@@ -10,6 +10,7 @@
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-calendar": "^2.19.2",
     "react-daum-postcode": "^1.8.3",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",

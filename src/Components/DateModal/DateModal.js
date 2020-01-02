@@ -3,7 +3,6 @@ import Calendar from "react-calendar";
 import "./DateModal.scss";
 
 class DateModal extends Component {
-  //key와 value가 이름이 중복된다면 없어진다.
   state = {
     date: new Date(),
     sendingDate: {
@@ -36,7 +35,6 @@ class DateModal extends Component {
   };
 
   render() {
-    // console.log(this.props.inner);
     return (
       <>
         {this.props.openSelector ? (
@@ -51,5 +49,3 @@ class DateModal extends Component {
   }
 }
 export default DateModal;
-// onClick={this.props.closeSelector}
-// onClick={this.props.closeSelector}
