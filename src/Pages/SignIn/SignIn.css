@@ -1,0 +1,127 @@
+@media only screen and (min-device-width: 500px) {
+  .containerLogin {
+    position: relative;
+    box-sizing: content-box;
+    margin: auto;
+    width: 500px;
+    top: 200px;
+  }
+
+  .head {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+
+  .quickLogin {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .memberBorder {
+    display: relative;
+    border: 1px solid #e3e3e3;
+    padding: 32px;
+  }
+
+  p.or {
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 16px;
+  }
+
+  .orSpan {
+    font-size: 18px;
+    background: white;
+    position: relative;
+    padding: 0 10px;
+  }
+  .orSpace {
+    border: 1px solid #d6d6d6;
+  }
+  .memory_box {
+    display: flex;
+  }
+
+  .checkId {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .checkPw {
+    font-size: 14px;
+  }
+
+  .setLogin {
+    width: 16px;
+  }
+
+  .noMember {
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #656565;
+  }
+
+  .signUpForMem {
+    margin-left: 30px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 0 12px 0;
+    margin-top: 20px;
+    background-color: rgb(5, 92, 245);
+    border: rgb(5, 92, 245);
+    border-radius: 5px;
+    color: white;
+  }
+
+  .error {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 0 12px 0;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border: rgb(5, 92, 245);
+    border-radius: 5px;
+    color: white;
+  }
+
+  .typeBox {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border: 1px solid #297de3;
+    font-size: 17px;
+    padding: 14px 16px;
+    margin-top: 16px;
+    border-radius: 5px;
+  }
+
+  .typeBoxError {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border: 1px solid #cc0033;
+    font-size: 17px;
+    padding: 14px 16px;
+    margin-top: 16px;
+    border-radius: 5px;
+  }
+
+  .typeBox:focus {
+    outline: 1px solid #297de3;
+  }
+
+  .loginErrorMessage {
+    font-size: 13px;
+    color: #cc0033;
+    padding: 8px 0 0 5px;
+  }
+}

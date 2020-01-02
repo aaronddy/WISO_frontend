@@ -1,3 +1,38 @@
+// .innerModal {
+//     width: 100%;
+//     position: absolute;
+//     max-width: 460px;
+//     z-index: 9999;
+//     top: 0;
+//     left: 50%;
+//     margin: 0 auto;
+//     background-color: red;
+//     transform: translate(-50%, 0);
+// }
+
+// .hiddenModal {
+//     display: none
+// }
+
+// .innerModalCloseButton {
+//     cursor: pointer;
+//     border: none;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 72px;
+//     height: 72px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: white;
+
+//     .innerCloseButtonImage {
+//         width: 24px;
+//         height: 24px;
+//     }
+// }
+
 .reservationBlue {
   // position: absolute;
   margin-top: 80px;
@@ -34,7 +69,6 @@
     outline: none;
     font-weight: bold;
     cursor: pointer;
-    transition: translateY(50px);
   }
 
   .reservationBlue.scrolled {

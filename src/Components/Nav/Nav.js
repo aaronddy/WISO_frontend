@@ -9,7 +9,7 @@ class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      scrolled: false,
+      scrolledNav: false,
       sideDrawerOpened: false,
       toggleBtnSpinned: false
     };
@@ -20,9 +20,9 @@ class Nav extends Component {
       const isTop = window.scrollY < 30;
       // console.log(window.scrollY);
       if (isTop !== true) {
-        this.setState({ scrolled: true });
+        this.setState({ scrolledNav: true });
       } else {
-        this.setState({ scrolled: false });
+        this.setState({ scrolledNav: false });
       }
     });
   }
@@ -53,7 +53,9 @@ class Nav extends Component {
         <div>
           <nav
             className={
-              this.state.scrolled ? "navigationMenu scrolled" : "navigationMenu"
+              this.state.scrolled
+                ? "navigationMenu scrolledNav"
+                : "navigationMenu"
             }
           >
             <WisoMenu />
