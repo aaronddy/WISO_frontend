@@ -4,7 +4,7 @@ import expandArrow from "../../Images/expand_arrow.png";
 // updateCurrentIndex = () => {
 //   this.setState({ current: index });
 // };
-
+ 
 class FaqBox extends Component {
   render() {
     // let answerBorderClasses;
@@ -15,7 +15,7 @@ class FaqBox extends Component {
     // }
     //console.log("FaqBox: ", this.props.article);
 
-    console.log(this.props.dataIndex);
+    // console.log(this.props.dataIndex);
     return (
       <div>
         <div className="faqArticleBorder">
@@ -24,7 +24,7 @@ class FaqBox extends Component {
             src={expandArrow}
             alt="arrowIcon"
             className="clickArrow"
-            onClick={() => this.props.openAnswer(this.props.dataIndex)}
+            onClick={this.props.openAnswer}
           />
         </div>
         <div

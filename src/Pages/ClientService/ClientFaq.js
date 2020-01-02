@@ -17,7 +17,7 @@ class ClientFaq extends Component {
   // console.log(this.props.indexValue);
 
   state = {
-    current: null,
+    current: 3,
     answerOpened: false
   };
 
@@ -25,7 +25,7 @@ class ClientFaq extends Component {
     console.log(this.props.value.articlesOne);
   };
 
-  clickToOpenAnswer = () => {
+ clickToOpenAnswer = () => {
     this.setState({
       answerOpened: !this.state.answerOpened
     });
