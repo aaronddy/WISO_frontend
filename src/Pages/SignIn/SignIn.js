@@ -90,6 +90,9 @@ class SignIn extends Component {
         password: this.state.password
       })
       .then(res => {
+         if (res.data) {
+         localStorage.setItem('access_token', res.data.access_token);
+  }
         // 연결이 됐을 시, then
         // SignUp route 연결
         console.log("성공");
