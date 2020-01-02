@@ -95,7 +95,8 @@ class SignIn extends Component {
   }
         // 연결이 됐을 시, then
         // SignUp route 연결
-        console.log("성공");
+        this.props.history.push("/");    
+        alert("로그인 성공");
         console.log(res.data);
       })
       .catch(err => {
