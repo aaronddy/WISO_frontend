@@ -55,9 +55,16 @@ class MovingBookingPage extends Component {
 
   //idp1 만 클릭되었으면, idp1: false가 setState에서 true로 바뀐다.
 
+  BookingInfoDone = () => {
+    this.Bookingdone();
+  };
+
   Bookingdone = () => {
+    if (this.state.mode1 === true) {
+      this.state.mode1 = 1;
+    }
     if (
-      this.state.mode1 === true &&
+      this.state.mode1 === 1 &&
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
@@ -65,10 +72,53 @@ class MovingBookingPage extends Component {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email,
-          password: this.state.pw,
-          phone_number: this.state.Phone
+          move_categories: this.state.mode1,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("가정 이사 서비스를 문의 주셔서 감사합니다.");
+        });
+    }
+    if (this.state.mode2 === true) {
+      this.state.mode2 = 2;
+    }
+    if (
+      this.state.mode2 === 2 &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      fetch("http://10.58.7.197:8000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          move_categories: this.state.mode2,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("가정 이사 서비스를 문의 주셔서 감사합니다.");
+        });
+    }
+    if (this.state.mode3 === true) {
+      this.state.mode3 = 3;
+    }
+    if (
+      this.state.mode3 === 3 &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      fetch("http://10.58.7.197:8000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          move_categories: this.state.mode3,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
         })
       })
         .then(res => res.json())
@@ -233,11 +283,13 @@ class MovingBookingPage extends Component {
             <button
               type="button"
               className={
-                this.state.address && this.state.phone.length === 11
+                this.state.address &&
+                this.state.phone.length === 11 &&
+                (this.state.mode1 || this.state.mode2 || this.statemode3)
                   ? "btnAfter"
                   : "btnBefore"
               }
-              onClick={this.Bookingdone}
+              onClick={this.BookingInfoDone}
             >
               견적 문의
             </button>
