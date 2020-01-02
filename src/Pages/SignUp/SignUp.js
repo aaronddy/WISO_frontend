@@ -3,6 +3,7 @@ import SignUpCheckBox from "./SignUpCheckbox";
 import "./SignUp.scss";
 import LogoBtn from "./SignUpLogoBtn";
 import SignUpInfoBox from "./SignUpInfoBox";
+import { withRouter } from "react-router-dom";
 
 class SignUp extends React.Component {
   constructor() {
@@ -69,6 +70,10 @@ class SignUp extends React.Component {
   //   console.log(this.state.box1);
   //   console.log(this.state.agreeBox);
   // }
+
+  goToSignIn = () => {
+    this.props.history.push("/SignIn");
+  };
 
   SecondClicked = e => {
     console.log("a");
@@ -244,7 +249,7 @@ class SignUp extends React.Component {
       })
         .then(res => res.json())
         .then(res => {
-          alert("success");
+          this.goToSignIn();
         });
     }
   };
@@ -391,4 +396,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
