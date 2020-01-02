@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/Main";
-
 import Nav from "./Components/Nav/Nav";
 import Reservation from "./Pages/Reservation/Reservation";
 import SignIn from "./Pages/SignIn/SignIn";
@@ -10,7 +9,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import MovingBookingPage from "./Pages/MovingBooking/MovingBookingPage";
 import Toogle from "./Toggle";
 import WithMiso from "./Pages/WithMiso/WithMiso";
-// import PostCode from "./Components/PostcodeSearch/PostCode";
+import HomeCleanBookingPage from "./Pages/HomeCleanBookingPage/HomeCleanBookingPage";
 
 class Routes extends React.Component {
   render() {
@@ -26,7 +25,11 @@ class Routes extends React.Component {
           <Route exact path="/Toggle" component={Toogle} />
           <Route exact path="/footer" component={Footer} />
           <Route exact path="/WithMiso" component={WithMiso} />
-          {/* <Route exact path="/PostCode" component={PostCode} /> */}
+          <Route
+            exact
+            path="/HomeCleanBooking"
+            component={HomeCleanBookingPage}
+          />
         </Switch>
       </Router>
     );
