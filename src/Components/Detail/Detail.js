@@ -1,9 +1,14 @@
 import React from "react";
 import "./Detail.scss";
+import { useHistory } from "react-router-dom";
 
-function Detail() {
+const Detail = ({ link }) => {
+  const history = useHistory();
+  const handleLink = path => ev => {
+    history.push(path);
+  };
   return (
-    <button className="dailyBtn">
+    <button className="dailyBtn" onClick={handleLink(link)}>
       <div className="dailyBtnComment">자세히 보기</div>
       <img
         className="dailyArrow"
@@ -12,6 +17,6 @@ function Detail() {
       />
     </button>
   );
-}
+};
 
 export default Detail;

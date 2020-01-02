@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Main.scss";
+import Daily from "../../Images/images/DailyImg.png";
 import Line from "../../Components/Line/Line";
-import Daily from "../../Images/DailyImg.png";
 import MainSlide from "../../Components/MainSlide/MainSlide";
 import Detail from "../../Components/Detail/Detail";
 import ServiceBox from "../../Components/ServiceBox/ServiceBox";
