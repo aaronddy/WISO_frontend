@@ -1,0 +1,255 @@
+.HomeCleanBookingPage {
+  margin: auto;
+  width: 60%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    .container {
+      width: 750px;
+    }
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .halfFull {
+    width: 50%;
+  }
+
+  h2.sectionSubheading {
+    line-height: 1.5;
+    text-transform: none;
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 100;
+  }
+
+  .GroupForm {
+    width: 100%;
+  }
+
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+  }
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .formTitle {
+    margin-bottom: 1.5rem;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .moveButtonWraper {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 1px solid #b3b3b3;
+    color: #b3b3b3;
+    font-weight: 500;
+    padding: 15px;
+    word-break: break-word;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+    // &:focus{
+    // border:2px solid #055cf5;
+    // color: #055cf5;
+    // }
+  }
+
+  .moveButtonBlue {
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 2px solid #055cf5;
+    color: #055cf5;
+    font-weight: 500;
+    padding: 1.3rem 2rem;
+    word-break: break-word;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+  }
+
+  .TimeTotalSize {
+    width: 470px;
+  }
+
+  .service {
+    width: 33%;
+  }
+
+  .timeSize {
+    width: 100%;
+    margin: 0 3px 0 3px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .timeSize {
+      width: 100%;
+      margin: 0 3px 0 3px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .TimeTotalSize {
+      width: 100%;
+    }
+  }
+
+  .ServiceStartingTime {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .timeSize {
+      width: 100%;
+      margin: 0 3px 0 3px;
+    }
+
+    h2.sectionSubheading {
+      line-height: 1.5;
+      text-transform: none;
+      margin: 10px 0;
+      font-size: 24px;
+      font-weight: 100;
+    }
+
+    .GroupForm {
+      width: 100%;
+    }
+
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .formTitle {
+      margin-bottom: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .moveButtonWraper {
+      cursor: pointer;
+      border-radius: 0.8rem;
+      border: 1px solid #b3b3b3;
+      color: #b3b3b3;
+      font-weight: 500;
+      padding: 15px;
+      word-break: break-word;
+      font-size: 1.2rem;
+      outline: none;
+      width: 100%;
+      // &:focus{
+      // border:2px solid #055cf5;
+      // color: #055cf5;
+      // }
+    }
+
+    .moveButtonBlue {
+      cursor: pointer;
+      border-radius: 0.8rem;
+      border: 2px solid #055cf5;
+      color: #055cf5;
+      font-weight: 500;
+      padding: 1.3rem 2rem;
+      word-break: break-word;
+      font-size: 1.2rem;
+      outline: none;
+      width: 100%;
+    }
+
+    .TimeTotalSize {
+      width: 470px;
+    }
+
+    .service {
+      width: 33%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .timeSize {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .TimeTotalSize {
+        width: 100%;
+      }
+      .GroupForm {
+        width: 100%;
+      }
+    }
+    .halfFull {
+      width: 50%;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  .checkMarkContainer {
+    position: relative;
+    vertical-align: text-bottom;
+  }
+
+  .checkMark {
+    width: 17px;
+    height: 7px;
+    position: absolute;
+    top: 0px;
+    border: 2px solid #055cf5;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .detailsServiceTime {
+    font-size: 18;
+  }
+
+  .checkMarkTextContainer {
+    margin-left: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  button {
+    border: none;
+  }
+}
+
+.ServiceStartingTimeHidden {
+  display: none;
+}

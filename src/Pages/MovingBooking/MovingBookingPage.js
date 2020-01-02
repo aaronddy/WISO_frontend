@@ -3,6 +3,7 @@ import "./MovingBookingPage.scss";
 import MovingBookingComp from "./MovingBookingComp";
 import SelectOption from "./SelectOption";
 import DaumPostcode from "react-daum-postcode";
+import { withRouter } from "react-router-dom";
 
 // import PostCode from "../../Components/PostcodeSearch/PostCode";
 // import { fullAddress } from "../../Components/PostcodeSearch/PostCode";
@@ -53,42 +54,87 @@ class MovingBookingPage extends Component {
     }
   };
 
-  //idp1 만 클릭되었으면, idp1: false가 setState에서 true로 바뀐다.
+  goToMain = () => {
+    this.props.history.push("/");
+  };
+  // idp1 만 클릭되었으면, idp1: false가 setState에서 true로 바뀐다.
 
   Bookingdone = () => {
+    if (this.state.mode1 === true) {
+      this.setState({ mode1: "1" });
+    }
     if (
-      this.state.mode1 === true &&
+      this.state.mode1 === "1" &&
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      fetch("http://10.58.7.197:8000/user", {
+      fetch("http://18.191.213.70:8080/move", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email,
-          password: this.state.pw,
-          phone_number: this.state.Phone
+          user_id: "1",
+          move_categories_id: this.state.mode1,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
         })
       })
         .then(res => res.json())
         .then(res => {
           alert("가정 이사 서비스를 문의 주셔서 감사합니다.");
+          this.goToMain();
         });
     }
-    if (
-      this.state.mode2 === true &&
-      this.state.phone.length === 11 &&
-      this.state.address !== undefined
-    ) {
-      alert("소형이사 서비스를 문의해주셔서 감사합니다.");
+    if (this.state.mode2 === true) {
+      this.setState({ mode2: "2" });
     }
     if (
-      this.state.mode3 === true &&
+      this.state.mode2 === "2" &&
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      alert("사무실 서비스를 문의해주셔서 감사합니다.");
+      fetch("http://18.191.213.70:8080/move", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: "1",
+          move_categories_id: this.state.mode2,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("소형이사 서비스를 문의해주셔서 감사합니다.");
+          this.goToMain();
+        });
+
+      // this.goToMain.bind(this);
+    }
+    if (this.state.mode3 === true) {
+      this.setState({ mode3: "3" });
+    }
+    if (
+      this.state.mode3 === "3" &&
+      this.state.phone.length === 11 &&
+      this.state.address !== undefined
+    ) {
+      fetch("http://18.191.213.70:8080/move", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: "1",
+          move_categories_id: this.state.mode3,
+          address: this.state.address,
+          phone_number: toString(this.state.phone)
+        })
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert("사무실 서비스를 문의해주셔서 감사합니다.");
+          this.goToMain();
+        });
+
+      // this.goToMain.bind(this);
     }
   };
 
@@ -252,4 +298,4 @@ class MovingBookingPage extends Component {
   }
 }
 
-export default MovingBookingPage;
+export default withRouter(MovingBookingPage);
