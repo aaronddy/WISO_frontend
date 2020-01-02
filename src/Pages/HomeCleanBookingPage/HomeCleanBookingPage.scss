@@ -220,6 +220,7 @@
   .checkMarkContainer {
     position: relative;
     vertical-align: text-bottom;
+    text-align: center;
   }
 
   .checkMark {
@@ -241,7 +242,6 @@
 
   .checkMarkTextContainer {
     margin-left: 20px;
-    text-align: center;
     font-size: 18px;
   }
 
@@ -252,4 +252,39 @@
 
 .ServiceStartingTimeHidden {
   display: none;
+}
+
+.btnBefore {
+  background-color: #055cf5;
+  color: #fff;
+  border-color: #055cf5;
+  opacity: 0.4;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 17px 34px;
+  border-radius: 30px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-top: 3px;
+  font-weight: 550;
+  cursor: not-allowed;
+}
+
+.btnAfter {
+  background-color: #055cf5;
+  color: #fff;
+  border-color: #055cf5;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 17px 34px;
+  border-radius: 30px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-top: 3px;
+  font-weight: 550;
+  cursor: pointer;
 }
