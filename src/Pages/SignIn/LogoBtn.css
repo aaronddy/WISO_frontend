@@ -1,0 +1,26 @@
+@media only screen and (min-device-width: 500px) {
+  .loginBtn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialLogin {
+    border: none;
+    background: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .loginIconNaver {
+    width: 50%;
+    height: auto;
+  }
+
+  .loginIconGoogle {
+    width: 51%;
+    height: auto;
+  }
+  .socialLogin:focus {
+    outline: none;
+  }
+}

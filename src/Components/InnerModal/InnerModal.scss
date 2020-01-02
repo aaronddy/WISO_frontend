@@ -1,0 +1,125 @@
+.innerModal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &.Modal-anim-enter {
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    &.Modal-anim-enter.Modal-anim-enter-active {
+        opacity: 1;
+    }
+
+    &.Modal-anim-leave {
+        opacity: 1;
+        transition: all 0.5s;
+    }
+
+    &.Modal-anim-leave.Modal-anim-leave-active {
+        opacity: 0;
+    }
+
+    .innerModal {
+        overflow: auto;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        max-width: 460px;
+        margin: 0 auto;
+        min-height: 420px;
+        max-height: 100%;
+        width: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+        font-size: 15px;
+
+        &.Modal-anim-enter {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.1);
+            transition: all 0.2s;
+        }
+
+        &.Modal-anim-enter.Modal-anim-enter-active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        &.Modal-anim-leave {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            transition: all 0.5s;
+        }
+
+        &.Modal-anim-leave.Modal-anim-leave-active {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(2.9);
+        }
+
+        .innerModalBtn {
+            cursor: pointer;
+            border: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .innerModalContentWrap {
+            padding: 80px 22px;
+            color: rgb(46, 48, 53);
+
+            .innerModalContentInner {
+                margin: 0px auto;
+                width: 326px;
+
+                .innerModalTopTitle {
+                    font-size: 34px;
+                    font-weight: bold;
+                    line-height: 1.35;
+                    letter-spacing: -0.2px;
+                }
+
+                .innerModalContent {
+                    margin: 8px 0px 60px;
+                }
+
+                .innerOneday,
+                .innerWeek {
+                    width: 327px;
+                    height: 56px;
+                    border-radius: 2px;
+                    background-color: rgb(243, 244, 248);
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-align: center;
+                    color: rgb(5, 92, 245);
+                    display: block;
+                    margin-bottom: 20px;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}

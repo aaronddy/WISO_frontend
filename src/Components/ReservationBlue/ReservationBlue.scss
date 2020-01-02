@@ -1,0 +1,91 @@
+// .innerModal {
+//     width: 100%;
+//     position: absolute;
+//     max-width: 460px;
+//     z-index: 9999;
+//     top: 0;
+//     left: 50%;
+//     margin: 0 auto;
+//     background-color: red;
+//     transform: translate(-50%, 0);
+// }
+
+// .hiddenModal {
+//     display: none
+// }
+
+// .innerModalCloseButton {
+//     cursor: pointer;
+//     border: none;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 72px;
+//     height: 72px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: white;
+
+//     .innerCloseButtonImage {
+//         width: 24px;
+//         height: 24px;
+//     }
+// }
+
+.reservationBlue {
+  // position: absolute;
+  margin-top: 80px;
+  width: 250px;
+  height: 56px;
+  background-color: rgb(5, 92, 245);
+  font-size: 18px;
+  justify-content: center;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .reservationBlue {
+    // position: absolute;
+    margin-top: 80px;
+    width: 100%;
+
+    // position: absolute;
+    margin-top: 80px;
+    width: 250px;
+
+    height: 56px;
+    background-color: rgb(5, 92, 245);
+    font-size: 18px;
+    justify-content: center;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .reservationBlue.scrolled {
+    width: 100%;
+    align-self: center;
+    height: 70px;
+    background-color: rgb(5, 92, 245);
+    font-size: 20px;
+    justify-content: center;
+    border: none;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    outline: none;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    transition: translateY 10s ease-in-out 10s; //top 10s ease-in 10s;
+  }
+}

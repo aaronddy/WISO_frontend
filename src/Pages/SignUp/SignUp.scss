@@ -1,0 +1,70 @@
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+::selection {
+  background-color: orange;
+  color: white;
+}
+
+.SignUpHeading {
+  font-size: 34px;
+}
+
+.ltype:before {
+  background: green;
+}
+
+.checkBoxColor:checked + .ltype:before {
+  background: red;
+  color: blue;
+}
+
+.allSelector {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.selectionOption {
+  margin-top: 16px;
+  padding: 0;
+  border-top: 1px solid #ebebeb;
+}
+
+.ltype {
+  margin-top: 16px;
+}
+
+.SignUpButtonAfter {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  background: blue;
+  color: white;
+  font-size: 14px;
+  line-height: 48px;
+}
+
+.SignUpButtonBefore {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: 24px;
+  background: #5292e5;
+  color: white;
+  font-size: 14px;
+  line-height: 48px;
+}
+
+#errorColorChange {
+  border-color: #ff3a48;
+  color: #ff3a48;
+}

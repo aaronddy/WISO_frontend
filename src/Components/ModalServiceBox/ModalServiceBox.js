@@ -1,34 +1,38 @@
 import React, { Component } from "react";
-import "./ServiceBox.scss";
+import "./ModalServiceBox.scss";
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-class ServiceBox extends Component {
+class ModalServiceBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode: false
+      mode: this.props.moving
     };
   }
   render() {
     return (
-      <a
-        onClick={() => this.props.serviceHandler(this.props.data.mainTitle)}
-        className="lifeBox"
-        href={this.props.link}
-      >
-        <img
-          className="boxImg"
-          src={this.props.data.subImg}
-          alt="미소 홈 서비스 이미지"
-        />
-        <div className="textWrap">
-          <div className="mainTitle">{this.props.data.mainTitle}</div>
-          <div className="subTitle">{this.props.data.subTitle}</div>
+      <>
+        {/* <Link to="/MovingBooking"> */}
+        <div
+          onClick={() => this.props.clickHandler(this.props.data.mainTitle)}
+          className="lifeBox"
+        >
+          <img
+            className="boxImg"
+            src={this.props.data.subImg}
+            alt="미소 홈 서비스 이미지"
+          />
+          <div className="textWrap">
+            <div className="mainTitle">{this.props.data.mainTitle}</div>
+            <div className="subTitle">{this.props.data.subTitle}</div>
+          </div>
         </div>
-      </a>
+        {/* </Link> */}
+      </>
     );
   }
 }
-export default ServiceBox;
+export default ModalServiceBox;
 
 // import React from "react";
 // import "./ServiceBox.scss";
