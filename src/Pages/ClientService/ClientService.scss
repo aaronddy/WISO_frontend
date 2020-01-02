@@ -24,6 +24,7 @@
 .clientServiceCategories {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   margin-bottom: 64px;
 }
 .clientServiceCategory {
@@ -39,7 +40,7 @@
   margin: 0 8px 6px 0;
   text-decoration: none;
 }
-.clientServiceCategory_click {
+.clientServiceCategory:hover {
   height: 22px;
   background-color: #055cf5;
   font-size: 16px;
@@ -80,9 +81,12 @@
 .faqAnswerBorderClosed {
   overflow: hidden;
   max-height: 0;
-  -webkit-transition: max-height 0.8s;
-  -moz-transition: max-height 0.8s;
-  transition: max-height 0.8s;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  // transform: scaleY(0);
 }
 
 .faqAnswerBorder {
@@ -90,7 +94,12 @@
   background-color: rgb(243, 244, 248);
   word-break: break-all;
   line-height: 1.5;
-  max-height: 184px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  // transform: scaleY(0.5s);
 }
 
 .faqAnswer {
@@ -161,7 +170,7 @@
   margin-right: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 500px) {
   .clientServiceContainer {
     max-width: 830px;
     margin: auto;
@@ -179,5 +188,6 @@
   }
   .callWiso {
     width: 100%;
+    margin-bottom: 50px;
   }
 }

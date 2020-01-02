@@ -2,26 +2,17 @@ import React, { Component } from "react";
 import "./ClientService.scss";
 import faqImg from "../../Images/faq@2x.png";
 import clientServiceCallIcon from "../../Images/phone.png";
-import FaqCategoriesData from "./FaqCategoriesData";
-import FaqSections from "./FaqSectionsData";
 import ClientServiceCategories from "./ClientServiceCategories";
 import ClientFaq from "./ClientFaq";
+import faqSections from "./FaqSectionsData";
 
 class ServiceClinet extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       answerOpened: false
     };
-    // this.clickToOpenAnswer = this.clickToOpenAnswer.bind(this);
   }
-
-  clickToOpenAnswer = e => {
-    this.setState({
-      answerOpened: !this.state.answerOpened
-    });
-    console.log(this.state.answerOpened);
-  };
 
   render() {
     return (
@@ -36,7 +27,15 @@ class ServiceClinet extends Component {
         </div>
         <div className="spaceBack" />
         <ClientServiceCategories />
-        <ClientFaq openAnswer={this.clickToOpenAnswer} />
+        {faqSections.section.map((curr, index) => {
+          return (
+            <ClientFaq
+              value={curr}
+              key={index}
+              stateValue={this.state.answerOpened}
+            />
+          );
+        })}
         <div className="spaceBack" />
         <div>
           <div className="wisoClientService">미소 고객센터</div>

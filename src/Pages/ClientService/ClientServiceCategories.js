@@ -2,18 +2,19 @@ import React, { Component } from "react";
 
 class ClientServiceCategories extends Component {
   render() {
+    // console.log(this.props.value);
     return (
       <div className="clientServiceCategories">
-        <a href="#가사도우미" className="clientServiceCategory">
+        <a href="#home_clean" className="clientServiceCategory">
           가사도우미
         </a>
-        <a href="#이사" className="clientServiceCategory">
+        <a href="#moving" className="clientServiceCategory">
           이사
         </a>
-        <a href="#예약 및 결제" className="clientServiceCategory">
+        <a href="#reservation_and_pay" className="clientServiceCategory">
           예약 및 결제
         </a>
-        <a href="#개인정보/환경설정" className="clientServiceCategory">
+        <a href="#personal_info_and_setting" className="clientServiceCategory">
           개인정보/환경설정
         </a>
       </div>

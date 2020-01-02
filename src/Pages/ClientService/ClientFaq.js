@@ -1,33 +1,55 @@
 import React, { Component } from "react";
-import expandArrow from "../../Images/expand_arrow.png";
+import FaqBox from "./FaqBox";
+// import expandArrow from "../../Images/expand_arrow.png";
 
 class ClientFaq extends Component {
-  render() {
-    let answerBorderClasses;
-    if (this.props.openAnswer) {
-      answerBorderClasses = "faqAnswerBorderClosed";
-    } else {
-      answerBorderClasses = "faqAnswerBorder";
-    }
+  // let openAnswerClasses;
+  // let aaa;
+  // for (let i = 0; i < 26; i++) {
+  //   if (this.props.indexValue === this.props.value.articlesOne.length - i) {
+  //     aaa = "faqAnswerBorder";
+  //     console.log(openAnswerClasses);
+  //   } else {
+  //     openAnswerClasses = "faqAnswerBorderClosed";
+  //   }
+  // }
+  // console.log(this.props.value.articlesOne.length);
+  // console.log(this.props.indexValue);
 
-    console.log(this.props.openAnswer);
+  state = {
+    current: null,
+    answerOpened: false
+  };
+
+  componentDidMount = () => {
+    console.log(this.props.value.articlesOne);
+  };
+
+  clickToOpenAnswer = () => {
+    this.setState({
+      answerOpened: !this.state.answerOpened
+    });
+    console.log(this.state.answerOpened);
+  };
+
+  render() {
+    const articles = this.props.value.articlesOne;
     return (
       <div className="clientServiceFnq">
-        <div className="faqSectionTitle">서비스 이용</div>
-        <div>
-          <div className="faqArticleBorder">
-            <span>Q. 이사 종류는 어떤 게 있나요?</span>
-            <img
-              src={expandArrow}
-              alt="arrowIcon"
-              className="clickArrow"
-              onClick={this.props.openAnswer}
-            />
-          </div>
-          <div className={answerBorderClasses}>
-            <div className="faqAnswer">안 알랴쥼</div>
-          </div>
+        <div className="faqSectionTitle">
+          {/* {this.props.value.section.titleNameOne} */}
         </div>
+        {articles.map((curr, index) => {
+          return (
+            <FaqBox
+              article={curr}
+              key={index}
+              dataIndex={index}
+              open={index === this.state.current && !this.state.answerOpened}
+              openAnswer={this.clickToOpenAnswer}
+            />
+          );
+        })}
       </div>
     );
   }
