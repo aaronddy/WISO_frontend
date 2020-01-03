@@ -1,8 +1,7 @@
 .MovingBookingPageTotal {
   .navbar {
-    height: 64px;
     position: relative;
-    min-height: 50px;
+
     margin-bottom: 20px;
     border: 1px solid transparent;
   }
@@ -50,6 +49,7 @@
   .center {
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
 
   .column {
@@ -211,7 +211,4 @@
     font-size: 12px;
   }
   //.move_button_wraper를 .move_house로 바꾸기
-}
-
-.ServiceStartingTime {
 }

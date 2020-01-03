@@ -27,9 +27,9 @@ class Nav extends Component {
     });
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll");
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll");
+  // }
 
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
@@ -37,13 +37,6 @@ class Nav extends Component {
     });
     console.log(this.state.sideDrawerOpened);
   };
-
-  // toggleBtnSpinHandler = () => {
-  //   this.setState(prevState => {
-  //     return { toggleBtnSpinned: !prevState.toggleBtnSpinned };
-  //   });
-  //   console.log(this.state.toggleBtnSpinned);
-  // };
 
   moveToMain = url => {};
 
@@ -53,16 +46,13 @@ class Nav extends Component {
         <div>
           <nav
             className={
-              this.state.scrolled
+              this.state.scrolledNav
                 ? "navigationMenu scrolledNav"
                 : "navigationMenu"
             }
           >
             <WisoMenu />
-            <DrawerToggleButton
-              click={this.drawerToggleClickHandler}
-              // animated={this.toggleBtnSpinHandler}
-            />
+            <DrawerToggleButton click={this.drawerToggleClickHandler} />
             <SideDrawer show={this.state.sideDrawerOpened} />
           </nav>
         </div>
