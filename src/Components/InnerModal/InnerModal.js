@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactTransitionGroup from "react-addons-css-transition-group";
 import "./InnerModal.scss";
 import InnerClose from "../../Images/close.png";
+import { Link } from "react-router-dom";
 
 class InnerModal extends Component {
   render() {
@@ -27,8 +28,10 @@ class InnerModal extends Component {
                     <p className="innerModalContent">
                       원하시는 서비스를 선택해주세요.
                     </p>
-                    <button className="innerOneday">1회 예약</button>
-                    <button className="innerWeek">정기 예약</button>
+                    <Link to="/Helper">
+                      <button className="innerOneday">1회 예약</button>
+                      <button className="innerWeek">정기 예약</button>
+                    </Link>
                   </div>
                 </div>
               </div>
