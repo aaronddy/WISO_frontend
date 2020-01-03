@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 const emailRegex = RegExp(
   /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
@@ -119,7 +120,7 @@ class SignIn extends Component {
         <h1 className="head">로그인</h1>
         <div className="memberBorder">
           <h2 className="quickLogin">간편 로그인</h2>
-          <LogoBtn />
+          <LogoBtn history={this.props.history} />
           <p className="or">
             <span className="orSpan">또는</span>
           </p>
@@ -177,4 +178,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);
