@@ -7,7 +7,7 @@ class SelectOption extends Component {
     return (
       <div
         onClick={this.props.clicked}
-        className="service center"
+        className="service center halfFull"
         for={this.props.category}
       >
         <button className={this.props.change}>{this.props.service}</button>

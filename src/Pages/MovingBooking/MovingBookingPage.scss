@@ -1,4 +1,4 @@
-.MovingBookingPage {
+.MovingBookingPageTotal {
   .navbar {
     height: 64px;
     position: relative;
@@ -15,6 +15,7 @@
     padding-left: 0;
     padding-right: 0;
   }
+
   .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -73,7 +74,7 @@
 
   .formTitle {
     margin-bottom: 1.5rem;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
   }
 
   .moveButtonWraper {
@@ -196,6 +197,21 @@
     font-weight: 550;
     cursor: pointer;
   }
+
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #055cf5;
+    color: #fff;
+    border-color: #055cf5;
+    opacity: 0.4;
+    font-size: 12px;
+  }
+  //.move_button_wraper를 .move_house로 바꾸기
 }
 
-//.move_button_wraper를 .move_house로 바꾸기
+.ServiceStartingTime {
+}
