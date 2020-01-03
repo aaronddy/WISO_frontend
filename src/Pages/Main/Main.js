@@ -8,6 +8,7 @@ import ServiceBox from "../../Components/ServiceBox/ServiceBox";
 import ServiceData from "../../Components/ServiceBox/ServiceData";
 import Footer from "../../Components/Footer/Footer";
 import WithMiso from "../../Pages/WithMiso/WithMiso";
+import Nav from "../../Components/Nav/Nav";
 
 class Main extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Main extends Component {
     return (
       <div>
         <div>
+          <Nav />
           <div className="mainContainer">
             <MainSlide />
             <div className="daily">

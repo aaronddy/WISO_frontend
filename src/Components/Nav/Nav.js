@@ -27,9 +27,9 @@ class Nav extends Component {
     });
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll");
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll");
+  // }
 
   drawerToggleClickHandler = () => {
     this.setState(prevState => {

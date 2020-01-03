@@ -3,7 +3,7 @@ import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-
+import Nav from "../../Components/Nav/Nav";
 const emailRegex = RegExp(
   /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
@@ -97,7 +97,6 @@ class SignIn extends Component {
         // 연결이 됐을 시, then
         // SignUp route 연결
         this.props.history.push("/");
-        alert("로그인 성공");
         console.log(res.data);
       })
       .catch(err => {
@@ -116,62 +115,65 @@ class SignIn extends Component {
     console.log(formErrors);
 
     return (
-      <div className="containerLogin">
-        <h1 className="head">로그인</h1>
-        <div className="memberBorder">
-          <h2 className="quickLogin">간편 로그인</h2>
-          <LogoBtn history={this.props.history} />
-          <p className="or">
-            <span className="orSpan">또는</span>
-          </p>
+      <div>
+        <Nav />
+        <div className="containerLogin">
+          <h1 className="head">로그인</h1>
+          <div className="memberBorder">
+            <h2 className="quickLogin">간편 로그인</h2>
+            <LogoBtn history={this.props.history} />
+            <p className="or">
+              <span className="orSpan">또는</span>
+            </p>
 
-          <form className="loginForm" onSubmit={this.postSignIn}>
-            <div className="loginEmail_div">
-              <label htmlFor="loginEmail"></label>
-              <input
+            <form className="loginForm" onSubmit={this.postSignIn}>
+              <div className="loginEmail_div">
+                <label htmlFor="loginEmail"></label>
+                <input
+                  className={
+                    formErrors.email.length > 0 ? "typeBoxError" : "typeBox"
+                  }
+                  type="text"
+                  placeholder="이메일"
+                  name="email"
+                  onChange={this.handleChange}
+                />
+                {formErrors.email.length > 0 && (
+                  <div className="loginErrorMessage">{formErrors.email}</div>
+                )}
+              </div>
+              <div className="loginPwDiv">
+                <input
+                  className={
+                    formErrors.password.length > 0 ? "typeBoxError" : "typeBox"
+                  }
+                  type="password"
+                  placeholder="비밀번호"
+                  name="password"
+                  onChange={this.handleChange}
+                />
+                {formErrors.password.length > 0 && (
+                  <div className="loginErrorMessage">{formErrors.password}</div>
+                )}
+              </div>
+              <button
+                type="submit"
                 className={
-                  formErrors.email.length > 0 ? "typeBoxError" : "typeBox"
+                  formErrors.email || formErrors.password.length > 8
+                    ? "submitBtn error"
+                    : "submitBtn"
                 }
-                type="text"
-                placeholder="이메일"
-                name="email"
-                onChange={this.handleChange}
-              />
-              {formErrors.email.length > 0 && (
-                <div className="loginErrorMessage">{formErrors.email}</div>
-              )}
-            </div>
-            <div className="loginPwDiv">
-              <input
-                className={
-                  formErrors.password.length > 0 ? "typeBoxError" : "typeBox"
-                }
-                type="password"
-                placeholder="비밀번호"
-                name="password"
-                onChange={this.handleChange}
-              />
-              {formErrors.password.length > 0 && (
-                <div className="loginErrorMessage">{formErrors.password}</div>
-              )}
-            </div>
-            <button
-              type="submit"
-              className={
-                formErrors.email || formErrors.password.length > 8
-                  ? "submitBtn error"
-                  : "submitBtn"
-              }
-            >
-              이메일로 로그인
-            </button>
-          </form>
-          <p className="noMember">
-            아직 미소 회원이 아니신가요?
-            <a className="signUpForMem" href="/SignUp">
-              회원가입
-            </a>
-          </p>
+              >
+                이메일로 로그인
+              </button>
+            </form>
+            <p className="noMember">
+              아직 미소 회원이 아니신가요?
+              <a className="signUpForMem" href="/SignUp">
+                회원가입
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     );
