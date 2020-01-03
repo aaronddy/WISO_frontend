@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Calendar from "react-calendar";
 import "./DateModal.scss";
-
+import axios from "axios";
 class DateModal extends Component {
   state = {
     date: new Date(),
@@ -11,7 +11,6 @@ class DateModal extends Component {
       year: ""
     }
   };
-
   onChange = date => {
     this.setState(
       {
@@ -33,8 +32,16 @@ class DateModal extends Component {
       }
     );
   };
+  componentDidMount() {
+    const { sendingDate } = this.state;
+    axios.post("/", {
+      service_start_date: `${sendingDate.year}-${sendingDate.month}-${sendingDate.date}`
+    });
+  }
 
   render() {
+    const { sendingDate } = this.state;
+    console.log(`${sendingDate.year}-${sendingDate.month}-${sendingDate.date}`);
     return (
       <>
         {this.props.openSelector ? (

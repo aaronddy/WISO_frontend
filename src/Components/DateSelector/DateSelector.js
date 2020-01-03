@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./DateSelector.scss";
 import DateModal from "../DateModal/DateModal";
+// import axios from "axios";
 class DateSelector extends Component {
   state = {
     OpenDate: false,
@@ -15,19 +16,14 @@ class DateSelector extends Component {
   };
 
   toParent = (date, month, year) => {
-    this.setState(
-      {
-        sendingDate: {
-          year: year,
-          month: month,
-          day: date
-        },
-        isClicked: false
+    this.setState({
+      sendingDate: {
+        year: year,
+        month: month,
+        day: date
       },
-      () => {
-        console.log(this.state.sendingDate.sec);
-      }
-    );
+      isClicked: false
+    });
   };
 
   openDateSelector = () => {
