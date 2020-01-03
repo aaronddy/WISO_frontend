@@ -10,6 +10,7 @@ import MovingBookingPage from "./Pages/MovingBooking/MovingBookingPage";
 import Toogle from "./Toggle";
 import WithMiso from "./Pages/WithMiso/WithMiso";
 import HomeCleanBookingPage from "./Pages/HomeCleanBookingPage/HomeCleanBookingPage";
+import Helper from "./Pages/Helper/Helper";
 
 class Routes extends React.Component {
   render() {
@@ -25,6 +26,7 @@ class Routes extends React.Component {
           <Route exact path="/Toggle" component={Toogle} />
           <Route exact path="/footer" component={Footer} />
           <Route exact path="/WithMiso" component={WithMiso} />
+          <Route exact path="/Helper" component={Helper} />
           <Route
             exact
             path="/HomeCleanBooking"
