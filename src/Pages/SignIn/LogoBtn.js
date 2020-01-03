@@ -1,34 +1,55 @@
 import React, { Component } from "react";
-import "./LogoBtn.css";
+import "./LogoBtn.scss";
 import kakaoLogo from "../../Images/logoImages/kakao_logo copy.png";
-
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 class LogoBtn extends Component {
+  loginWithKakao = e => {
+    // e.preventDefault();
+    // 로그인 창을 띄웁니다
+
+    window.Kakao.init("0d465847605791705f3e366dd476a77e");
+    window.Kakao.Auth.login({
+      success: function(authObj) {
+        console.log(this.props.history);
+        this.props.history.push("/");
+        // const kakaoToken = authObj.access_token;
+        // axios({
+        //   url: "http://18.216.136.166:8080/user/social_kakao_login",
+        //   method: "post",
+        //   headers: { Authorization: kakaoToken },
+        //   data: {}
+        // }).then(res => {
+        //   if (res.data) {
+        //     localStorage.setItem("access_token", res.data.access_token);
+        //   }
+        //   // 연결이 됐을 시, then
+        //   alert("로그인에 성공하였습니다");
+        //   this.props.history.push("/");
+        //   console.log(res.data);
+        // });
+      },
+      fail: function(err) {
+        console.log(JSON.stringify(err));
+      }
+    });
+  };
+
   render() {
     return (
       <div className="loginBtn">
-        <button
-          className="socialLogin"
-          onClick={ev => {
-            this.socialLogin("카카오");
-          }}
-        >
+        <button className="socialLogin" onClick={this.loginWithKakao}>
           <img className="loginIconKakao" src={kakaoLogo} alt="kakao_logo" />
         </button>
-        {/* <button
-          className="socialLogin"
-          onClick={ev => {
-            this.socialLogin("#구글");
-          }}
-        >
-          <img
-            className="loginIconGoogle"
-            src="/images/btn_google_signin.png"
-            alt="구글 로그인"
-          />
-        </button> */}
       </div>
     );
   }
 }
 
-export default LogoBtn;
+export default withRouter(LogoBtn);
+
+// .catch(err => {
+//   // 연결이 안 됐을 시, catch
+//   console.log(err.response);
+//   alert("카카오 로그인에 실패하였습니다.");
+// });
