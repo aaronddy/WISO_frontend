@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./SignIn.css";
+import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
 import axios from "axios";
 
@@ -90,12 +90,12 @@ class SignIn extends Component {
         password: this.state.password
       })
       .then(res => {
-         if (res.data) {
-         localStorage.setItem('access_token', res.data.access_token);
-  }
+        if (res.data) {
+          localStorage.setItem("access_token", res.data.access_token);
+        }
         // 연결이 됐을 시, then
         // SignUp route 연결
-        this.props.history.push("/");    
+        this.props.history.push("/");
         alert("로그인 성공");
         console.log(res.data);
       })
