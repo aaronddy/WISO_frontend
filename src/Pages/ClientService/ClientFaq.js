@@ -17,7 +17,7 @@ class ClientFaq extends Component {
   // console.log(this.props.indexValue);
 
   state = {
-    current: 3,
+    currentIdx: 3,
     answerOpened: false
   };
 
@@ -25,11 +25,11 @@ class ClientFaq extends Component {
     console.log(this.props.value.articlesOne);
   };
 
- clickToOpenAnswer = () => {
+  clickToOpenAnswer = () => {
     this.setState({
-      answerOpened: !this.state.answerOpened
+      currentIdx: !this.state.answerOpened
     });
-    console.log(this.state.answerOpened);
+    // console.log(this.state.answerOpened);
   };
 
   render() {

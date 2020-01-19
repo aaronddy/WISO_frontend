@@ -1,112 +1,115 @@
-.spaceBtw {
+.FooterStyle {
+  .spaceBtw {
     display: flex;
     justify-content: space-between;
-}
+  }
 
-.flexStart {
+  .flexStart {
     display: flex;
     justify-content: flex-start;
-}
+  }
 
-.flexEnd {
+  .flexEnd {
     display: flex;
     justify-content: flex-end;
-}
+  }
 
-.alignCenter {
+  .alignCenter {
     display: flex;
     align-items: center;
-}
+  }
 
-.flexDirRow {
+  .flexDirRow {
     display: flex;
     flex-direction: row;
-}
+  }
 
-.arrow {
+  .arrow {
     position: absolute;
-    right:0;
-}
+    right: 0;
+  }
 
-.relative {
+  .relative {
     position: relative;
-}
+  }
 
-.inline {
+  .inline {
     display: inline;
-}
+  }
 
-.top {
+  .top {
     border: none;
     outline: none;
     font-weight: 900;
     font-size: 24px;
-}
+  }
 
-.linkPack {
+  .linkPack {
     border: none;
     outline: none;
     font-size: 15px;
     margin-left: 20px;
     font-weight: 500;
-}
+  }
 
-.topArrow {
+  .topArrow {
     width: 24px;
-}
+  }
 
-.white {
+  .white {
     color: white;
-}
+  }
 
-.black {
-    background-color: black; 
-}
+  .black {
+    background-color: black;
+  }
 
-.marginBm1 {
+  .marginBm1 {
     margin-bottom: 24px;
-}
+  }
 
-.marginBm2 {
+  .marginBm2 {
     margin-bottom: 10px;
-}
+  }
 
-.ref {
+  .ref {
     font-size: 13px;
     color: rgb(163, 167, 174);
-}
+  }
 
-.background {
+  .background {
     background: none;
-}
+  }
 
-.backgroundColor {
+  .backgroundColor {
     background-color: rgb(38, 39, 40);
-}
+  }
 
-.layout {
+  .layout {
     border: 1px solid black;
     padding: 24px 24px 92px;
     background-color: rgb(38, 39, 40);
     margin-bottom: 0px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.margin {
-    margin: 0 5% 0 5%;
-}
-
-.border {
-    border:none;
-    cursor: none;
-}
-
-
-.cursor {
-    cursor:pointer;
   }
+
+  footer {
+    width: 100%;
+  }
+
+  .margin {
+    margin: 0 5% 0 5%;
+  }
+
+  .border {
+    border: none;
+    cursor: none;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .logoSize {
+    width: 50px;
+  }
+}

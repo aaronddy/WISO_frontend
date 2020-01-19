@@ -1,0 +1,116 @@
+.navigationMenu {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  max-height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  transition: 0.25s;
+  display: flex;
+}
+
+.wisoLogoWhite {
+  box-sizing: content-box;
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  margin: 25px 35px 25px 0;
+  padding: 0 12px;
+  flex-direction: row;
+}
+
+.wisoLogoBlue {
+  box-sizing: content-box;
+  cursor: pointer;
+  width: 65px;
+  height: 30px;
+  padding: 0 12px;
+  flex-direction: row;
+}
+
+.tightAll {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.tightTwo {
+  display: flex;
+}
+
+.navigationGroup {
+  > span {
+    box-sizing: content-box;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 25px 14px;
+    color: black;
+    cursor: pointer;
+  }
+}
+
+// input[type="checkbox"]:checked ~ .sidebarMenu {
+//   transform: translateX(0);
+// }
+
+// input[type="checkbox"] {
+//   transition: all 0.3s;
+//   box-sizing: border-box;
+//   display: none;
+// }
+
+// #openSidebarMenu:checked ~ .sidebarIconToggle > .horizontal {
+//   transition: all 0.3s;
+//   box-sizing: border-box;
+//   opacity: 0;
+// }
+// #openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+//   transition: all 0.3s;
+//   box-sizing: border-box;
+//   transform: rotate(135deg);
+//   margin-top: 8px;
+// }
+// #openSidebarMenu:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+//   transition: all 0.3s;
+//   box-sizing: border-box;
+//   transform: rotate(-135deg);
+//   margin-top: -9px;
+// }
+.scrolledNav {
+  background-color: white;
+
+  .menuList {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigationMenu {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: white;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    z-index: 500;
+  }
+  .navigationGroup {
+    display: none;
+  }
+
+  .wisoLogoWhite {
+    display: none;
+  }
+
+  .scrolledNav {
+    background-color: white;
+  }
+}
