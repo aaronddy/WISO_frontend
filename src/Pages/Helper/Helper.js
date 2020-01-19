@@ -172,14 +172,6 @@ class Helper extends Component {
 
     const { year, month, date } = this.state.sendingDate;
     const service_start_date = moment([year, month, date]).format("YYYY-MM-DD");
-
-    // console.table({
-    //   year,
-    //   month,
-    //   date,
-    //   service_start_date
-    // });
-
     /**
  * {
             "reserve_cycle_id": "1",
