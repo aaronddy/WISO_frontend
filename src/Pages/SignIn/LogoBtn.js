@@ -13,21 +13,21 @@ class LogoBtn extends Component {
       success: function(authObj) {
         console.log(this.props.history);
         this.props.history.push("/");
-        // const kakaoToken = authObj.access_token;
-        // axios({
-        //   url: "http://18.216.136.166:8080/user/social_kakao_login",
-        //   method: "post",
-        //   headers: { Authorization: kakaoToken },
-        //   data: {}
-        // }).then(res => {
-        //   if (res.data) {
-        //     localStorage.setItem("access_token", res.data.access_token);
-        //   }
-        //   // 연결이 됐을 시, then
-        //   alert("로그인에 성공하였습니다");
-        //   this.props.history.push("/");
-        //   console.log(res.data);
-        // });
+        const kakaoToken = authObj.access_token;
+        axios({
+          url: "http://18.216.136.166:8080/user/social_kakao_login",
+          method: "post",
+          headers: { Authorization: kakaoToken },
+          data: {}
+        }).then(res => {
+          if (res.data) {
+            localStorage.setItem("access_token", res.data.access_token);
+          }
+          // 연결이 됐을 시, then
+          alert("로그인에 성공하였습니다");
+          this.props.history.push("/");
+          console.log(res.data);
+        });
       },
       fail: function(err) {
         console.log(JSON.stringify(err));

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
 import axios from "axios";
+import wisoLogo from "../../Images/logoImages/wiso_blue_1.png";
 import { withRouter } from "react-router-dom";
 
 const emailRegex = RegExp(
@@ -117,9 +118,12 @@ class SignIn extends Component {
 
     return (
       <div className="containerLogin">
-        <h1 className="head">로그인</h1>
+        <h1 className="head">
+          <img src={wisoLogo} className="wisoLogo" alt="logo" />
+          들어가기
+        </h1>
         <div className="memberBorder">
-          <h2 className="quickLogin">간편 로그인</h2>
+          {/* <h2 className="quickLogin">간편 로그인</h2> */}
           <LogoBtn history={this.props.history} />
           <p className="or">
             <span className="orSpan">또는</span>
