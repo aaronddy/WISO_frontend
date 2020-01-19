@@ -5,7 +5,7 @@ import "./Modal.scss";
 import CloseImg from "../../Images/close.png";
 import ReactTransitionGroup from "react-addons-css-transition-group";
 import InnerModal from "../InnerModal/InnerModal";
-// import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { withRouter } from "react-router-dom";
 
 // 27열 모달 윈도우 클릭 시 화면 닫기 삭제
 class Modal extends Component {
@@ -30,6 +30,7 @@ class Modal extends Component {
       this.openModalTwo();
       console.log(this.state.cal);
     } else if (e === "이사") {
+      this.props.history.push("/MovingBooking");
     }
   };
   render() {
@@ -83,4 +84,4 @@ class Modal extends Component {
     );
   }
 }
-export default Modal;
+export default withRouter(Modal);
