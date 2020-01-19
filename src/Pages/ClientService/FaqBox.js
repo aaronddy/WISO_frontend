@@ -1,31 +1,32 @@
 import React, { Component } from "react";
 import expandArrow from "../../Images/expand_arrow.png";
 
-// updateCurrentIndex = () => {
-//   this.setState({ current: index });
-// };
-
 class FaqBox extends Component {
-  render() {
-    // let answerBorderClasses;
-    // if (!this.props.stateValue) {
-    //   answerBorderClasses = "faqAnswerBorderClosed";
-    // } else {
-    //   answerBorderClasses = "faqAnswerBorder";
-    // }
-    //console.log("FaqBox: ", this.props.article);
+  constructor() {
+    super();
+    this.state = {
+      opened: false
+    };
+    this.clickHandler.bind(this);
+  }
 
-    // console.log(this.props.dataIndex);
+  clickHandler = () => {
+    this.setState({
+      opened: !this.state.opened
+    });
+    console.log(this.state.opened);
+  };
+  render() {
     return (
       <div>
-        <div className="faqArticleBorder">
+        <div
+          className="faqArticleBorder"
+          onClick={
+            this.clickHandler ? "faqAnswerBorder" : "faqAnswerBorderClosed"
+          }
+        >
           <span>{this.props.article.question}</span>
-          <img
-            src={expandArrow}
-            alt="arrowIcon"
-            className="clickArrow"
-            onClick={() => this.props.openAnswe}
-          />
+          <img src={expandArrow} alt="arrowIcon" className="clickArrow" />
         </div>
         <div
           className={

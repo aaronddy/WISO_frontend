@@ -1,21 +1,6 @@
 import React, { Component } from "react";
-import FaqBox from "./FaqBox";
-// import expandArrow from "../../Images/expand_arrow.png";
 
 class ClientFaq extends Component {
-  // let openAnswerClasses;
-  // let aaa;
-  // for (let i = 0; i < 26; i++) {
-  //   if (this.props.indexValue === this.props.value.articlesOne.length - i) {
-  //     aaa = "faqAnswerBorder";
-  //     console.log(openAnswerClasses);
-  //   } else {
-  //     openAnswerClasses = "faqAnswerBorderClosed";
-  //   }
-  // }
-  // console.log(this.props.value.articlesOne.length);
-  // console.log(this.props.indexValue);
-
   state = {
     currentIdx: 3,
     answerOpened: false
@@ -33,13 +18,15 @@ class ClientFaq extends Component {
   };
 
   render() {
-    const articles = this.props.value.articlesOne;
     return (
       <div className="clientServiceFnq">
         <div className="faqSectionTitle">
-          {/* {this.props.value.section.titleNameOne} */}
+          {/* {this.props.value.sections.map((curr, index) => {
+            return;
+          })} */}
         </div>
-        {articles.map((curr, index) => {
+
+        {/* {this.props.value.map((curr, index) => {
           return (
             <FaqBox
               article={curr}
@@ -49,7 +36,7 @@ class ClientFaq extends Component {
               openAnswer={this.clickToOpenAnswer}
             />
           );
-        })}
+        })} */}
       </div>
     );
   }

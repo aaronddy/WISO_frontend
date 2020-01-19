@@ -3,17 +3,43 @@ import "./ClientService.scss";
 import faqImg from "../../Images/faq@2x.png";
 import clientServiceCallIcon from "../../Images/phone.png";
 import ClientServiceCategories from "./ClientServiceCategories";
-import ClientFaq from "./ClientFaq";
-import faqSections from "./FaqSectionsData";
+import FaqBox from "./FaqBox";
+import FnqData from "./FnqData";
 
 class ServiceClinet extends Component {
   constructor() {
     super();
     this.state = {
-      answerOpened: false
+      number: 1
     };
   }
 
+  takeState = id => {
+    this.setState({
+      number: id
+    });
+    console.log(this.state.number);
+  };
+
+  list = () => {
+    if (this.state.number === 1) {
+      return FnqData.section1.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 2) {
+      return FnqData.section2.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 3) {
+      return FnqData.section3.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 4) {
+      return FnqData.section4.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    }
+  };
   render() {
     return (
       <div className="clientServiceContainer">
@@ -26,16 +52,8 @@ class ServiceClinet extends Component {
           </div>
         </div>
         <div className="spaceBack" />
-        <ClientServiceCategories />
-        {faqSections.section.map((curr, index) => {
-          return (
-            <ClientFaq
-              value={curr}
-              key={index}
-              stateValue={this.state.answerOpened}
-            />
-          );
-        })}
+        <ClientServiceCategories takeState={this.takeState} />
+        {this.list()}
         <div className="spaceBack" />
         <div>
           <div className="wisoClientService">미소 고객센터</div>
