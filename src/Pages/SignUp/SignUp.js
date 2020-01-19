@@ -232,7 +232,7 @@ class SignUp extends React.Component {
       this.state.box1 &&
       this.state.box2
     ) {
-      fetch("http://10.58.7.197:8000/user", {
+      fetch("http://18.216.136.166:8080/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
