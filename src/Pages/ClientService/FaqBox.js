@@ -19,18 +19,13 @@ class FaqBox extends Component {
   render() {
     return (
       <div>
-        <div
-          className="faqArticleBorder"
-          onClick={
-            this.clickHandler ? "faqAnswerBorder" : "faqAnswerBorderClosed"
-          }
-        >
+        <div className="faqArticleBorder" onClick={this.clickHandler}>
           <span>{this.props.article.question}</span>
           <img src={expandArrow} alt="arrowIcon" className="clickArrow" />
         </div>
         <div
           className={
-            this.props.open ? "faqAnswerBorder" : "faqAnswerBorderClosed"
+            this.state.opened ? "faqAnswerBorder" : "faqAnswerBorderClosed"
           }
         >
           <div className="faqAnswer">{this.props.article.answer}</div>

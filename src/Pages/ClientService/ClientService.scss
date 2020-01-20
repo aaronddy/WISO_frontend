@@ -78,24 +78,24 @@
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  // transform: scaleY(0);
 }
 
 .faqAnswerBorder {
   color: rgb(98, 101, 106);
   background-color: rgb(243, 244, 248);
   word-break: break-all;
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  // transform: scaleY(0.5s);
+  transform: scaleY(2s);
 }
 
 .faqAnswer {
   padding: 24px;
+  white-space: pre-line;
 }
 
 .wisoClientService {
