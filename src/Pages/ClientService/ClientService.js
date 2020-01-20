@@ -5,7 +5,7 @@ import clientServiceCallIcon from "../../Images/phone.png";
 import ClientServiceCategories from "./ClientServiceCategories";
 import FaqBox from "./FaqBox";
 import FnqData from "./FnqData";
-import Nav from "../../Components/Nav/Nav";
+import Nav from "../../Components/NavBlue/Nav";
 import Footer from "../../Components/Footer/Footer";
 
 class clientService extends Component {

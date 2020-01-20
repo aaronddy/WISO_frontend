@@ -4,7 +4,7 @@ import MovingBookingComp from "./MovingBookingComp";
 import SelectOption from "./SelectOption";
 import DaumPostcode from "react-daum-postcode";
 import { withRouter } from "react-router-dom";
-import Nav from "../../Components/Nav/Nav";
+import Nav from "../../Components/NavBlue/Nav";
 
 // import PostCode from "../../Components/PostcodeSearch/PostCode";
 // import { fullAddress } from "../../Components/PostcodeSearch/PostCode";

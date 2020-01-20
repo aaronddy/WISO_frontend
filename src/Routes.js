@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/Main";
-import Nav from "./Components/Nav/Nav";
+import Nav from "./Components/NavBlue/Nav";
 import Reservation from "./Pages/Reservation/Reservation";
 import SignIn from "./Pages/SignIn/SignIn";
 import Footer from "./Components/Footer/Footer";

@@ -8,7 +8,7 @@ import ServiceBox from "../../Components/ServiceBox/ServiceBox";
 import ServiceData from "../../Components/ServiceBox/ServiceData";
 import Footer from "../../Components/Footer/Footer";
 import WithMiso from "../../Pages/WithMiso/WithMiso";
-import Nav from "../../Components/Nav/Nav";
+import Nav from "../../Components/NavWhite/Nav";
 
 class Main extends Component {
   constructor(props) {

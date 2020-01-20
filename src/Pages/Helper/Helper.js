@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 import "../../Components/DateSelector/DateSelector.scss";
 import DateModal from "../../Components/DateModal/DateModal";
 import moment from "moment-timezone";
-import Nav from "../../Components/Nav/Nav";
+import Nav from "../../Components/NavBlue/Nav";
 import api from "../../utils/api";
 
 class Helper extends Component {

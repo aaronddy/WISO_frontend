@@ -1,0 +1,84 @@
+.navigationMenu {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  max-height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  transition: 0.25s;
+  display: flex;
+}
+
+.wisoLogoBlue {
+  box-sizing: content-box;
+  cursor: pointer;
+  width: 65px;
+  height: auto;
+  padding: 0 12px;
+  flex-direction: row;
+}
+
+.tightAll {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.tightTwo {
+  display: flex;
+}
+
+.navigationGroup {
+  > span {
+    box-sizing: content-box;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 25px 14px;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.none {
+  display: none;
+}
+.scrolledNav {
+  background-color: white;
+
+  .navigationGroup {
+    > span {
+      color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigationMenu {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: white;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    z-index: 500;
+  }
+  .navigationGroup {
+    display: none;
+  }
+
+  .wisoLogoWhite {
+    display: none;
+  }
+
+  .scrolledNav {
+    background-color: white;
+  }
+}
