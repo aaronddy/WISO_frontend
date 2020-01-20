@@ -1,0 +1,185 @@
+.clientServiceContainer {
+  max-width: 830px;
+  margin: auto;
+  padding: 159px 0 0 0;
+}
+
+.clientService {
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.needHelp {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 76px;
+}
+
+.spaceBack {
+  background-color: white;
+  height: 120px;
+}
+
+.clientServiceCategories {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 64px;
+}
+.clientServiceCategory {
+  // height: 22px;
+  background-color: white;
+  font-size: 16px;
+  justify-content: center;
+  border: 1px solid #c7cad0;
+  border-radius: 2px;
+  color: #62656a;
+  outline: none;
+  padding: 12px 16px 12px 16px;
+  margin: 0 8px 6px 0;
+  text-decoration: none;
+}
+.active {
+  background-color: #055cf5;
+  border: 1px solid #055cf5;
+  color: white;
+}
+
+.faqSectionTitle {
+  font-size: 21px;
+  font-weight: bold;
+  padding-bottom: 16px;
+}
+
+.faqArticleBorder {
+  border-bottom: 1px solid #e3e5ea;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 16px;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
+.clickArrow {
+  flex: none;
+  margin-left: 5px;
+  width: 13px;
+  cursor: pointer;
+}
+
+.faqAnswerBorderClosed {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.faqAnswerBorder {
+  color: rgb(98, 101, 106);
+  background-color: rgb(243, 244, 248);
+  word-break: break-all;
+  line-height: 1.6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transform: scaleY(2s);
+}
+
+.faqAnswer {
+  padding: 24px;
+  white-space: pre-line;
+}
+
+.wisoClientService {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 64px;
+}
+
+.clientServiceBorder {
+  display: flex;
+  flex-direction: row;
+}
+.clientServiceMainImg {
+  width: 48%;
+  object-fit: cover;
+  margin-bottom: 30px;
+  margin-right: 40px;
+}
+
+.callWiso {
+  width: 48%;
+}
+
+.infoWiso {
+  font-size: 17px;
+  margin-bottom: 48px;
+  line-height: 1.5;
+}
+
+.chatWithWiso {
+  height: 48px;
+  background-color: #055cf5;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  outline: none;
+  width: 100%;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.callWithWiso {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f8;
+  font-size: 16px;
+  border: none;
+  border-radius: 2px;
+  color: #055cf5;
+  outline: none;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clientServiceCallIcon {
+  width: 24px;
+  height: auto;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 500px) {
+  .clientServiceContainer {
+    max-width: 830px;
+    margin: auto;
+    padding: 159px 24px 0 24px;
+  }
+
+  .clientServiceBorder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .clientServiceMainImg {
+    width: 100%;
+    object-fit: cover;
+  }
+  .callWiso {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
