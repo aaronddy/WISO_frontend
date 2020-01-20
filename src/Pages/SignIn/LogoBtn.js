@@ -7,10 +7,14 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 class LogoBtn extends Component {
+  abc = () => {
+    console.log(this.props);
+  };
+
   loginWithKakao = e => {
     window.Kakao.init("0d465847605791705f3e366dd476a77e");
     window.Kakao.Auth.login({
-      success: function(authObj) {
+      success: authObj => {
         // console.log(this.props.history);
         // this.props.history.push("/");
         const kakaoToken = authObj.access_token;
@@ -26,8 +30,9 @@ class LogoBtn extends Component {
           }
           // 연결이 됐을 시, then
           alert("로그인에 성공하였습니다");
+          // this.goToMainPage;
+          console.log(this.props);
           this.props.history.push("/");
-          console.log(res.data);
         });
       },
       fail: function(err) {
@@ -37,7 +42,11 @@ class LogoBtn extends Component {
     });
   };
 
+  // goToMainPage = () => {
+  //   this.props.history.push("/");
+  // };
   render() {
+    this.abc();
     return (
       <div className="loginBtn">
         <button className="socialLogin" onClick={this.loginWithKakao}>
