@@ -4,18 +4,34 @@
     box-sizing: content-box;
     margin: auto;
     width: 500px;
-    top: 200px;
+    top: 130px;
   }
 
   .head {
     text-align: center;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     font-size: 30px;
+  }
+
+  .wisoLogo {
+    width: 40%;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    cursor: pointer;
   }
 
   .quickLogin {
     text-align: center;
     padding-bottom: 20px;
+    font-size: 18px;
+    color: #707070;
+  }
+
+  .loginWiso {
+    font-size: 25px;
+    text-align: center;
+    padding: 17px 0;
+    color: #707070;
   }
 
   .memberBorder {
@@ -23,22 +39,11 @@
     border: 1px solid #e3e3e3;
     padding: 32px;
   }
-
-  p.or {
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 16px;
+  .lineDiv {
+    border: 1px dashed #e3e3e3;
+    margin: 15px 0;
   }
 
-  .orSpan {
-    font-size: 18px;
-    background: white;
-    position: relative;
-    padding: 0 10px;
-  }
-  .orSpace {
-    border: 1px solid #d6d6d6;
-  }
   .memory_box {
     display: flex;
   }
@@ -57,7 +62,7 @@
   }
 
   .noMember {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 15px;
     text-align: center;
     color: #656565;

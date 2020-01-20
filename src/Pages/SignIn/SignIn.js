@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
 import axios from "axios";
+import wisoLogo from "../../Images/logoImages/wiso_blue_1.png";
 import { withRouter } from "react-router-dom";
-import Nav from "../../Components/Nav/Nav";
+
 const emailRegex = RegExp(
   /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
@@ -115,17 +116,21 @@ class SignIn extends Component {
     console.log(formErrors);
 
     return (
-      <div>
-        <Nav />
-        <div className="containerLogin">
-          <h1 className="head">로그인</h1>
-          <div className="memberBorder">
-            <h2 className="quickLogin">간편 로그인</h2>
-            <LogoBtn history={this.props.history} />
-            <p className="or">
-              <span className="orSpan">또는</span>
-            </p>
-
+      <div className="containerLogin">
+        <h1 className="head">
+          <img
+            src={wisoLogo}
+            className="wisoLogo"
+            alt="logo"
+            // history={this.props.history}
+          />
+        </h1>
+        <div className="memberBorder">
+          <h2 className="quickLogin">다른 서비스로 로그인</h2>
+          <LogoBtn history={this.props.history} />
+          <div className="lineDiv" />
+          <div>
+            <div className="loginWiso">wiso 로그인</div>
             <form className="loginForm" onSubmit={this.postSignIn}>
               <div className="loginEmail_div">
                 <label htmlFor="loginEmail"></label>
