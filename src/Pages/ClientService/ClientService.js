@@ -8,7 +8,7 @@ import FnqData from "./FnqData";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 
-class ServiceClinet extends Component {
+class clientService extends Component {
   constructor() {
     super();
     this.state = {
@@ -92,4 +92,4 @@ class ServiceClinet extends Component {
   }
 }
 
-export default ServiceClinet;
+export default clientService;
