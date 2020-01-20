@@ -1,52 +1,95 @@
 import React, { Component } from "react";
 import "./ClientService.scss";
+import faqImg from "../../Images/faq@2x.png";
+import clientServiceCallIcon from "../../Images/phone.png";
+import ClientServiceCategories from "./ClientServiceCategories";
+import FaqBox from "./FaqBox";
+import FnqData from "./FnqData";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 
-class ServiceClinet extends Component {
+class clientService extends Component {
+  constructor() {
+    super();
+    this.state = {
+      number: 1
+    };
+  }
+
+  takeState = id => {
+    this.setState({
+      number: id
+    });
+    console.log(this.state.number);
+  };
+
+  list = () => {
+    if (this.state.number === 1) {
+      return FnqData.section1.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 2) {
+      return FnqData.section2.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 3) {
+      return FnqData.section3.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    } else if (this.state.number === 4) {
+      return FnqData.section4.articles.map((curr, idx) => (
+        <FaqBox article={curr} key={idx} stateNum={this.state.number} />
+      ));
+    }
+  };
   render() {
     return (
-      <div>
-        <div className="serviceClientContainer">
-          <div className="serviceCenter">고객센터</div>
-          <div className="needHlep">
-            도움이
-            <br />
-            필요하신가요?
+      <>
+        <Nav />
+        <div className="clientServiceContainer">
+          <div className="helpBorder">
+            <div className="clientService">고객센터</div>
+            <div className="needHelp">
+              도움이
+              <br />
+              필요하신가요?
+            </div>
           </div>
-        </div>
-        <div className="spaceBack" />
-        <div className="categoriesContainer">
-          <a href="#가사도우미" className="categoriesButton">
-            가사도우미
-          </a>
-          <a href="#이사" className="categoriesButton">
-            이사
-          </a>
-          <a href="#예약 및 결제" className="categoriesButton">
-            예약 및 결제
-          </a>
-          <a href="#개인정보/환경설정" className="categoriesButton">
-            개인정보/환경설정
-          </a>
-        </div>
-        <div className="faqContainer">
-          <div classNme="faqSectionTitle">서비스 이용</div>
+          <div className="spaceBack" />
+          <ClientServiceCategories takeState={this.takeState} />
+          {this.list()}
+          <div className="spaceBack" />
           <div>
-            <div>
-              <button>Q. 이사 종류는 어떤 게 있나요?</button>
-              <button className="clickArrow"></button>
+            <div className="wisoClientService">미소 고객센터</div>
+          </div>
+          <div className="clientServiceBorder">
+            <img
+              src={faqImg}
+              alt="고객센터 메인"
+              className="clientServiceMainImg"
+            />
+            <div className="callWiso">
+              <div className="infoWiso">
+                오전 8시 - 오후 10시 (연중무휴)
+                <br />
+                서울특별시 성동구 아차산로 68, 11층
+              </div>
+              <button className="chatWithWiso">1:1 실시간 문의 (채팅)</button>
+              <button className="callWithWiso">
+                <img
+                  src={clientServiceCallIcon}
+                  alt="call"
+                  className="clientServiceCallIcon"
+                />
+                <div>1588-8808</div>
+              </button>
             </div>
           </div>
         </div>
-        <div className="spaceBack" />
-        <div>
-          <div>미소 고객센터</div>
-        </div>
-        <div>
-          <img src="/images/cs_main.png" alt="고객센터 메인" />
-        </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 }
 
-export default ServiceClinet;
+export default clientService;
