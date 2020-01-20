@@ -210,20 +210,23 @@ class Helper extends Component {
     //   })
     // })
 
-    api
-      .post("/housecleaning/ontimereservate", {
-        data: {
-          starting_time_id,
-          service_duration_id,
-          service_start_date
-        }
-      })
-      .then(res => {
-        alert("예약하신 정보는 마이 페이지에서 확인 가능합니다.");
-        this.goToMain();
-      });
+    // api
+    //   .post("/ontimereservate", {
+    //     data: {
+    //       starting_time_id,
+    //       service_duration_id,
+    //       service_start_date
+    //     }
+    //   })
+    //   .then(res => {
+    //     alert("예약하신 정보는 마이 페이지에서 확인 가능합니다.");
+    //     this.goToMain();
+    //   });
+    // api.post("/", {});
   };
-
+  goToMain = () => {
+    this.props.history.push("/");
+  };
   render() {
     return (
       <>
