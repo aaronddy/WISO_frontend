@@ -26,7 +26,7 @@ class LogoBtn extends Component {
           }
           // 연결이 됐을 시, then
           alert("로그인에 성공하였습니다");
-          // this.props.history.push("/");
+          this.props.history.push("/");
           console.log(res.data);
         });
       },
