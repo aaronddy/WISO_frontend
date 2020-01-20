@@ -11,15 +11,13 @@
     cursor: pointer;
   }
 
-  .loginIconNaver {
-    width: 50%;
+  .loginIcon {
+    width: 25%;
     height: auto;
+    border-radius: 10px;
+    padding: 5px 20px;
   }
 
-  .loginIconGoogle {
-    width: 51%;
-    height: auto;
-  }
   .socialLogin:focus {
     outline: none;
   }
