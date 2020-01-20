@@ -42,13 +42,14 @@
 }
 
 .navigationGroup {
-  > a {
+  > span {
     box-sizing: content-box;
     display: inline-block;
     height: 30px;
     line-height: 30px;
     padding: 25px 14px;
     color: black;
+    cursor: pointer;
   }
 }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import "./SignIn.scss";
 import LogoBtn from "./LogoBtn";
@@ -5,6 +6,14 @@ import axios from "axios";
 import wisoLogo from "../../Images/logoImages/wiso_blue_1.png";
 import { withRouter } from "react-router-dom";
 
+=======
+import React, { Component } from 'react';
+import './SignIn.scss';
+import LogoBtn from './LogoBtn';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import Nav from '../../Components/Nav/Nav';
+>>>>>>> master
 const emailRegex = RegExp(
   /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
@@ -27,12 +36,12 @@ class SignIn extends Component {
     super();
 
     this.state = {
-      email: "",
-      password: "",
-      button: "",
+      email: '',
+      password: '',
+      button: '',
       formErrors: {
-        email: "",
-        password: ""
+        email: '',
+        password: ''
       }
     };
 
@@ -49,7 +58,7 @@ class SignIn extends Component {
       Password: {this.state.password}
       `);
     } else {
-      console.error("Form Invalid - DISPLAY ERROR MESSAGE");
+      console.error('Form Invalid - DISPLAY ERROR MESSAGE');
     }
   };
 
@@ -59,16 +68,16 @@ class SignIn extends Component {
     let formErrors = this.state.formErrors;
 
     switch (name) {
-      case "email":
+      case 'email':
         formErrors.email = emailRegex.test(value)
-          ? ""
-          : "이메일 형식이 아닙니다.";
+          ? ''
+          : '이메일 형식이 아닙니다.';
         break;
-      case "password":
+      case 'password':
         formErrors.password =
           value.length < 8 && value.length > 0
-            ? "최소한 8자리 이상이어야 합니다."
-            : "";
+            ? '최소한 8자리 이상이어야 합니다.'
+            : '';
         break;
       default:
         break;
@@ -87,24 +96,23 @@ class SignIn extends Component {
     console.log(`email:${this.state.email}\npassword:${this.state.password}`);
 
     axios
-      .post("http://10.58.7.197:8000/user/auth", {
+      .post('http://18.216.136.166:8080/user/auth', {
         email: this.state.email,
         password: this.state.password
       })
       .then(res => {
         if (res.data) {
-          localStorage.setItem("access_token", res.data.access_token);
+          localStorage.setItem('access_token', res.data.access_token);
         }
         // 연결이 됐을 시, then
         // SignUp route 연결
-        this.props.history.push("/");
-        alert("로그인 성공");
+        this.props.history.push('/');
         console.log(res.data);
       })
       .catch(err => {
         // 연결이 안 됐을 시, catch
         console.log(err.response);
-        alert("로그인과 비밀번호를 다시 확인해 주세요");
+        alert('로그인과 비밀번호를 다시 확인해 주세요');
       });
   };
 

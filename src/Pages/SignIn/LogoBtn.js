@@ -51,9 +51,3 @@ class LogoBtn extends Component {
 }
 
 export default withRouter(LogoBtn);
-
-// .catch(err => {
-//   // 연결이 안 됐을 시, catch
-//   console.log(err.response);
-//   alert("카카오 로그인에 실패하였습니다.");
-// });
