@@ -1,7 +1,12 @@
 import axios from "axios";
 import qs from "qs";
 
-const backend_location = "http://18.216.136.166:8080";
+// headers: {
+//   'Content-Type': 'application/json',
+//   authorization: this.state.token,
+// },
+
+const backend_location = "http://10.58.0.176:8000";
 
 const request = ({ method, path, query, headers, data }) => {
   const token = localStorage.getItem("access_token");
