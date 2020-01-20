@@ -2,11 +2,6 @@ import React from "react";
 import "./DrawerToggleButton.scss";
 
 const DrawerToggleButton = props => {
-  // let toggleBtnClasses = "isActive";
-  // if (props.animated) {
-  //   toggleBtnClasses = "";
-  // }
-
   return (
     <div className="containerHamburger">
       <button
