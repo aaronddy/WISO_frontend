@@ -9,7 +9,7 @@ import { withRouter } from "react-router-dom";
 import "../../Components/DateSelector/DateSelector.scss";
 import DateModal from "../../Components/DateModal/DateModal";
 import moment from "moment-timezone";
-
+import Nav from "../../Components/Nav/Nav";
 import api from "../../utils/api";
 
 class Helper extends Component {
@@ -170,6 +170,8 @@ class Helper extends Component {
     console.log(starting_time_id, service_duration_id);
     if (!starting_time_id || !service_duration_id) return false;
 
+    alert("예약완료 되었습니다");
+    this.props.history.push("/");
     const { year, month, date } = this.state.sendingDate;
     const service_start_date = moment([year, month, date]).format("YYYY-MM-DD");
     /**
@@ -225,141 +227,156 @@ class Helper extends Component {
   render() {
     return (
       <>
+        <Nav />
         <div className="helpercontainer">
-          <nav className="helperNavBarwrap">
-            <div className="helperNavBar">
-              <img
+          <div>
+            <nav className="helperNavBarwrap">
+              <div className="helperNavBar">
+                {/* <img
                 className="helperNavBarImg"
                 src={HelperLogo}
                 alt="wisoLogo"
-              ></img>
-            </div>
-          </nav>
-          <main className="helperInnerContainer">
-            <div className="contentTitle">
-              <h2>1회 청소 예약</h2>
-            </div>
-            <div className="contentPara">
-              <p>청소를 언제하고 싶으신가요?</p>
-            </div>
-          </main>
-          <div className="helperBtn">
-            {/* <DateSelector /> */}
-            <div>
-              <button className="daySelector" onClick={this.openDateSelector}>
-                {this.state.isClicked
-                  ? this.state.defaultDateName
-                  : `${this.state.sendingDate.year}년 ${this.state.sendingDate.month}월 ${this.state.sendingDate.date}일`}
-              </button>
-              <DateModal
-                toParent={this.toParent}
-                // value={this.state.date}
-                openSelector={this.state.OpenDate}
-                closeSelector={this.closeDateSelector}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="HomeCleanBookingPage">
-          <div className="formGroup center">
-            <hr></hr>
-          </div>
-          <div className="container formTitle">
-            <div className="container center sectionSubheading GroupForm">
-              <MovingBookingComp
-                atr="sectionSubheading"
-                heading="서비스 시간을 선택해 주세요"
-              />
-            </div>
-            <div className="center">
-              <div className="center TimeTotalSize GroupForm">
-                <SelectOption
-                  clicked={this.handler}
-                  change={
-                    this.state.time1
-                      ? "moveButtonBlue center timeSize "
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="3시간"
-                  service="3시간"
-                />
-                <SelectOption
-                  clicked={this.handler}
-                  change={
-                    this.state.time2
-                      ? "moveButtonBlue center timeSize"
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="4시간"
-                  service="4시간"
-                />
-                <SelectOption
-                  clicked={this.handler}
-                  change={
-                    this.state.time3
-                      ? "moveButtonBlue center timeSize"
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="8시간"
-                  service="8시간"
+              ></img> */}
+              </div>
+            </nav>
+            <main className="helperInnerContainer">
+              <div className="contentTitle">
+                <h2>1회 청소 예약</h2>
+              </div>
+              <div className="contentPara">
+                <p>청소를 언제하고 싶으신가요?</p>
+              </div>
+            </main>
+            <div className="helperBtn">
+              {/* <DateSelector /> */}
+              <div>
+                <button className="daySelector" onClick={this.openDateSelector}>
+                  {this.state.isClicked
+                    ? this.state.defaultDateName
+                    : `${this.state.sendingDate.year}년 ${this.state.sendingDate.month}월 ${this.state.sendingDate.date}일`}
+                </button>
+                <DateModal
+                  toParent={this.toParent}
+                  // value={this.state.date}
+                  openSelector={this.state.OpenDate}
+                  closeSelector={this.closeDateSelector}
                 />
               </div>
             </div>
           </div>
-          <div className="ServiceStartingTime">
-            <div className="container center sectionSubheading GroupForm">
-              <MovingBookingComp
-                atr={
+          <div className="HomeCleanBookingPage">
+            <div className="formGroup center">
+              <hr></hr>
+            </div>
+            <div className="container formTitle">
+              <div className="container center sectionSubheading GroupForm">
+                <MovingBookingComp
+                  atr="sectionSubheading"
+                  heading="서비스 시간을 선택해 주세요"
+                />
+              </div>
+              <div className="center">
+                <div className="center TimeTotalSize GroupForm">
+                  <SelectOption
+                    clicked={this.handler}
+                    change={
+                      this.state.time1
+                        ? "moveButtonBlue center timeSize "
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="3시간"
+                    service="3시간"
+                  />
+                  <SelectOption
+                    clicked={this.handler}
+                    change={
+                      this.state.time2
+                        ? "moveButtonBlue center timeSize"
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="4시간"
+                    service="4시간"
+                  />
+                  <SelectOption
+                    clicked={this.handler}
+                    change={
+                      this.state.time3
+                        ? "moveButtonBlue center timeSize"
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="8시간"
+                    service="8시간"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="ServiceStartingTime">
+              <div className="container center sectionSubheading GroupForm">
+                <MovingBookingComp
+                  atr={
+                    this.state.time1 === false &&
+                    this.state.time2 === false &&
+                    this.state.time3 === false
+                      ? "ServiceStartingTimeHidden sectionSubheading "
+                      : this.state.time2 === true
+                      ? "ServiceStartingTime sectionSubheading center "
+                      : "ServiceStartingTimeHidden sectionSubheading"
+                  }
+                  heading="시작 시간을 선택해주세요"
+                />
+              </div>
+              <div
+                className={
                   this.state.time1 === false &&
                   this.state.time2 === false &&
                   this.state.time3 === false
-                    ? "ServiceStartingTimeHidden sectionSubheading "
+                    ? "ServiceStartingTimeHidden sectionSubheading"
                     : this.state.time2 === true
-                    ? "ServiceStartingTime sectionSubheading center "
+                    ? "ServiceStartingTime sectionSubheading center"
                     : "ServiceStartingTimeHidden sectionSubheading"
                 }
-                heading="시작 시간을 선택해주세요"
-              />
-            </div>
-            <div
-              className={
-                this.state.time1 === false &&
-                this.state.time2 === false &&
-                this.state.time3 === false
-                  ? "ServiceStartingTimeHidden sectionSubheading"
-                  : this.state.time2 === true
-                  ? "ServiceStartingTime sectionSubheading center"
-                  : "ServiceStartingTimeHidden sectionSubheading"
-              }
-            >
-              <div className="center TimeTotalSize">
-                <SelectOption
-                  clicked={this.dateHandle}
-                  change={
-                    this.state.morning
-                      ? "moveButtonBlue center timeSize "
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="오전 9시"
-                  service="오전 9시"
-                />
-                <SelectOption
-                  clicked={this.dateHandle}
-                  change={
-                    this.state.noon
-                      ? "moveButtonBlue center timeSize"
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="오후 2시"
-                  service="오후 2시"
-                />
+              >
+                <div className="center TimeTotalSize">
+                  <SelectOption
+                    clicked={this.dateHandle}
+                    change={
+                      this.state.morning
+                        ? "moveButtonBlue center timeSize "
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="오전 9시"
+                    service="오전 9시"
+                  />
+                  <SelectOption
+                    clicked={this.dateHandle}
+                    change={
+                      this.state.noon
+                        ? "moveButtonBlue center timeSize"
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="오후 2시"
+                    service="오후 2시"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="ServiceStartingTime">
-            <div className="container center sectionSubheading GroupForm">
-              <MovingBookingComp
-                atr={
+            <div className="ServiceStartingTime">
+              <div className="container center sectionSubheading GroupForm">
+                <MovingBookingComp
+                  atr={
+                    this.state.time1 === false &&
+                    this.state.time2 === false &&
+                    this.state.time3 === false
+                      ? "ServiceStartingTimeHidden sectionSubheading"
+                      : this.state.time1 === true
+                      ? "ServiceStartingTime sectionSubheading center"
+                      : "ServiceStartingTimeHidden sectionSubheading"
+                  }
+                  heading="시작 시간을 선택해주세요"
+                />
+              </div>
+              <div
+                className={
                   this.state.time1 === false &&
                   this.state.time2 === false &&
                   this.state.time3 === false
@@ -368,85 +385,75 @@ class Helper extends Component {
                     ? "ServiceStartingTime sectionSubheading center"
                     : "ServiceStartingTimeHidden sectionSubheading"
                 }
-                heading="시작 시간을 선택해주세요"
-              />
+              >
+                <div className="center TimeTotalSize">
+                  <SelectOption
+                    clicked={this.dateHandle}
+                    change={
+                      this.state.morning
+                        ? "moveButtonBlue center timeSize "
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="오전 10시"
+                    service="오전 10시"
+                  />
+                  <SelectOption
+                    clicked={this.dateHandle}
+                    change={
+                      this.state.noon
+                        ? "moveButtonBlue center timeSize"
+                        : "moveButtonWraper center timeSize"
+                    }
+                    category="오후 2시"
+                    service="오후 2시"
+                  />
+                </div>
+              </div>
             </div>
             <div
               className={
                 this.state.time1 === false &&
                 this.state.time2 === false &&
                 this.state.time3 === false
-                  ? "ServiceStartingTimeHidden sectionSubheading"
-                  : this.state.time1 === true
-                  ? "ServiceStartingTime sectionSubheading center"
-                  : "ServiceStartingTimeHidden sectionSubheading"
+                  ? "ServiceStartingTimeHidden"
+                  : this.state.morning === false && this.state.noon === false
+                  ? "ServiceStartingTimeHidden"
+                  : ""
               }
             >
-              <div className="center TimeTotalSize">
-                <SelectOption
-                  clicked={this.dateHandle}
-                  change={
-                    this.state.morning
-                      ? "moveButtonBlue center timeSize "
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="오전 10시"
-                  service="오전 10시"
-                />
-                <SelectOption
-                  clicked={this.dateHandle}
-                  change={
-                    this.state.noon
-                      ? "moveButtonBlue center timeSize"
-                      : "moveButtonWraper center timeSize"
-                  }
-                  category="오후 2시"
-                  service="오후 2시"
-                />
+              <div className="checkMarkContainer">
+                <span className="checkMark"></span>
+                <span className="checkMarkTextContainer">
+                  {this.duration()}
+                </span>
+              </div>
+              <div className="detailsServiceTime">
+                <p>
+                  <smaill>서비스 요금은 주소에 따라 다르게 책정됩니다.</smaill>
+                  <div>
+                    <button>상세 가격 안내 보기</button>
+                  </div>
+                </p>
               </div>
             </div>
-          </div>
-          <div
-            className={
-              this.state.time1 === false &&
-              this.state.time2 === false &&
-              this.state.time3 === false
-                ? "ServiceStartingTimeHidden"
-                : this.state.morning === false && this.state.noon === false
-                ? "ServiceStartingTimeHidden"
-                : ""
-            }
-          >
-            <div className="checkMarkContainer">
-              <span className="checkMark"></span>
-              <span className="checkMarkTextContainer">{this.duration()}</span>
+            <div className="center">
+              <button
+                type="button"
+                className={
+                  (this.state.time1 || this.state.time2 || this.state.time3) &&
+                  (this.state.morning || this.state.noon) !== false
+                    ? "btnAfter"
+                    : "btnBefore"
+                }
+                onClick={this.Bookingdone}
+              >
+                예약완료
+              </button>
             </div>
-            <div className="detailsServiceTime">
-              <p>
-                <smaill>서비스 요금은 주소에 따라 다르게 책정됩니다.</smaill>
-                <div>
-                  <button>상세 가격 안내 보기</button>
-                </div>
-              </p>
-            </div>
-          </div>
-          <div className="center">
-            <button
-              type="button"
-              className={
-                (this.state.time1 || this.state.time2 || this.state.time3) &&
-                (this.state.morning || this.state.noon) !== false
-                  ? "btnAfter"
-                  : "btnBefore"
-              }
-              onClick={this.Bookingdone}
-            >
-              예약완료
-            </button>
           </div>
         </div>
       </>
     );
   }
 }
-export default Helper;
+export default withRouter(Helper);

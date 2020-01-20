@@ -15,6 +15,9 @@ class WisoMenu extends Component {
     this.props.history.push("/SignIn");
   };
 
+  goToClientServie = () => {
+    this.props.history.push("/ClientService");
+  };
   render() {
     return (
       <div className="tightAll">
@@ -29,7 +32,7 @@ class WisoMenu extends Component {
         </div>
         <div className="navigationGroup tightThree">
           <span href="#파트너">파트너</span>
-          <span href="#고객센터">고객센터</span>
+          <span onClick={this.goToClientServie}>고객센터</span>
           <span onClick={this.goToSignInPage}>로그인</span>
         </div>
       </div>
