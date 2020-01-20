@@ -87,7 +87,7 @@ class SignIn extends Component {
     console.log(`email:${this.state.email}\npassword:${this.state.password}`);
 
     axios
-      .post("http://18.216.136.166:8080/user/auth", {
+      .post("http://10.58.0.176:8000/user/signin", {
         email: this.state.email,
         password: this.state.password
       })
