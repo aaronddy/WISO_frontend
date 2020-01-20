@@ -1,5 +1,8 @@
+.helpercontainer {
+  position: relative;
+  top: 130px;
+}
 .helperInnerContainer {
-  margin-top: 64px;
   text-align: center;
 
   .helperNavBarwrap {
@@ -11,7 +14,9 @@
     }
   }
 }
-
+.helpercontainer {
+  position: relative;
+}
 .contentTitle {
   margin-bottom: 50px;
 

@@ -25,7 +25,6 @@ const formValid = ({ formErrors, ...rest }) => {
 class SignIn extends Component {
   constructor() {
     super();
-
     this.state = {
       email: "",
       password: "",
@@ -38,6 +37,10 @@ class SignIn extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  goToMainPage = () => {
+    this.props.history.push("/");
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -87,7 +90,7 @@ class SignIn extends Component {
     console.log(`email:${this.state.email}\npassword:${this.state.password}`);
 
     axios
-      .post("http://18.216.136.166:8080/user/auth", {
+      .post("http://10.58.0.176:8000/user/signin", {
         email: this.state.email,
         password: this.state.password
       })
@@ -122,7 +125,7 @@ class SignIn extends Component {
             src={wisoLogo}
             className="wisoLogo"
             alt="logo"
-            // history={this.props.history}
+            onClick={this.goToMainPage}
           />
         </h1>
         <div className="memberBorder">
