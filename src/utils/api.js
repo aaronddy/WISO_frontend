@@ -6,7 +6,7 @@ import qs from "qs";
 //   authorization: this.state.token,
 // },
 
-const backend_location = "http://10.58.0.176:8000";
+const backend_location = "http://54.180.158.181:8000";
 
 const request = ({ method, path, query, headers, data }) => {
   const token = localStorage.getItem("access_token");

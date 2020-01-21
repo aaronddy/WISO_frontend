@@ -19,7 +19,7 @@ class LogoBtn extends Component {
         // this.props.history.push("/");
         const kakaoToken = authObj.access_token;
         axios({
-          url: "http://10.58.0.176:8000/user/kakaologin",
+          url: "http://54.180.158.181:8000/user/kakaologin",
           method: "post",
           headers: { Authorization: kakaoToken },
           data: {}
