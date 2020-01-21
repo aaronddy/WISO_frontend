@@ -71,7 +71,7 @@ class MovingBookingPage extends Component {
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      fetch("http://10.58.0.176:8000/move", {
+      fetch("http://54.180.158.181:8000/move", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ class MovingBookingPage extends Component {
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      fetch("http://10.58.0.176:8000/move", {
+      fetch("http://54.180.158.181:8000/move", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -127,7 +127,7 @@ class MovingBookingPage extends Component {
       this.state.phone.length === 11 &&
       this.state.address !== undefined
     ) {
-      fetch("http://10.58.0.176:8000/move", {
+      fetch("http://54.180.158.181:8000/move", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
