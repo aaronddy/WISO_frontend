@@ -18,10 +18,11 @@ Automatically open [httop://localhost:3000](httop://localhost:3000) to view it i
 
 
 ## Description 
-![Screenshot](htttps://Users/ykim5470/Documents/123.png)
+![Screenshot](https://{})
 
 ### Deployment
 
 This section has moved here: https://youtu.be/AxPz7_mrQZI
 
 All the website demo video is uploaded the above url. 
+a
