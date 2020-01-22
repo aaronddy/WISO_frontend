@@ -18,7 +18,7 @@ Automatically open [httop://localhost:3000](httop://localhost:3000) to view it i
 
 
 ## Description 
-![Screenshot](https://file:///Users/ykim5470/Documents/123.png)
+![Screenshot](http_proxy=http://file:///Users/ykim5470/Documents/123.png)
 
 ### Deployment
 
